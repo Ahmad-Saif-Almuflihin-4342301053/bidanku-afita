@@ -82,11 +82,11 @@
     }
 
     /* ==========================================================================
-       2. SAMSUNG S10 MOBILE-FIRST DEVICE CONTAINER (360px - 412px Viewport)
+       2. SAMSUNG GALAXY S10 PRECISE DEVICE CONTAINER (360px × 760px CSS VIEWPORT)
        ========================================================================== */
     .mobile-simulator-viewport {
       width: 100%;
-      max-width: 412px; /* Standar Samsung Galaxy S10 / modern flagship */
+      max-width: 360px; /* Eksak CSS Logical Width Samsung Galaxy S10 / DevTools Preset */
       min-height: 100vh;
       margin: 0 auto;
       background-color: var(--color-canvas);
@@ -229,24 +229,30 @@
       100% { opacity: 0.6; transform: scale(0.9); }
     }
 
-    /* Pinwheel Logo Rosette Minimalist */
+    /* Official Logo Mini in Top HUD */
     .hero-logo-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: rgba(232, 44, 109, 0.85);
-      backdrop-filter: blur(8px);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(232, 44, 109, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 14px rgba(232, 44, 109, 0.28);
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      background: transparent;
+      padding: 0;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .hero-rosette-spin {
-      width: 20px;
-      height: 20px;
-      animation: spin-soft 26s linear infinite;
+    .hero-logo-btn:active {
+      transform: scale(0.94);
+    }
+    .hero-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 50%;
     }
     @keyframes spin-soft {
       from { transform: rotate(0deg); }
@@ -419,13 +425,858 @@
       margin-bottom: 1rem;
     }
 
-    /* Momtera Product Section */
-    .momtera-card-m {
-      background: linear-gradient(180deg, #FDF0F3 0%, #FFFFFF 100%);
-      border-radius: 24px;
-      padding: 1.75rem 1.4rem;
+    /* ==========================================================================
+       PEPPERMINT-STYLE 4-CARD STACK SECTION (GET IN TOUCH WITH US)
+       ========================================================================== */
+    .touch-section-stage {
+      padding: 3.5rem 1.25rem 4rem;
+      background: var(--color-canvas);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .touch-header-wrap {
+      text-align: center;
+      margin-bottom: 2.25rem;
+    }
+
+    .touch-eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: #FFFFFF;
+      color: var(--color-accent);
       border: 1px solid var(--color-blush-border);
-      box-shadow: 0 12px 30px rgba(232, 44, 109, 0.08);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 10px rgba(232, 44, 109, 0.08);
+      margin-bottom: 0.85rem;
+    }
+
+    .touch-main-heading {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      line-height: 1.22;
+      color: var(--color-heading);
+      margin-bottom: 0.75rem;
+    }
+
+    .touch-main-desc {
+      font-size: 0.92rem;
+      color: var(--color-body);
+      line-height: 1.6;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+
+    /* Kartu Wrapper & Stacking */
+    .touch-cards-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: relative;
+    }
+
+    .peppermint-card {
+      border-radius: 26px;
+      padding: 1.75rem 1.5rem 1.6rem;
+      position: relative;
+      box-shadow: 0 12px 32px rgba(38, 22, 31, 0.06), 0 2px 6px rgba(38, 22, 31, 0.03);
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+      will-change: transform, opacity;
+      opacity: 0; /* Mulai tersembunyi untuk GSAP ScrollTrigger */
+    }
+
+    .peppermint-card:active {
+      transform: scale(0.985) !important;
+    }
+
+    /* Aksen Pita Diagonal Belakang Card (Peppermint Ribbon Identity) */
+    .touch-cards-stack::before {
+      content: "";
+      position: absolute;
+      top: 15%;
+      left: -15%;
+      width: 130%;
+      height: 90px;
+      background: linear-gradient(135deg, rgba(252, 238, 241, 0.8) 0%, rgba(254, 215, 226, 0.4) 100%);
+      transform: rotate(-14deg);
+      border-radius: 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Variasi Warna & Tilt 4 Card */
+    .card-promil {
+      background: #FDFBF7;
+      border: 1.5px solid rgba(232, 44, 109, 0.15);
+      color: var(--color-heading);
+      transform: rotate(-2deg);
+      z-index: 1;
+    }
+
+    .card-flex {
+      background: #FDF0F4;
+      border: 1.5px solid rgba(232, 44, 109, 0.2);
+      color: var(--color-heading);
+      transform: rotate(2deg);
+      z-index: 2;
+    }
+
+    .card-kb {
+      background: #EBF8F4;
+      border: 1.5px solid rgba(16, 185, 129, 0.22);
+      color: #13382E;
+      transform: rotate(-1.5deg);
+      z-index: 3;
+    }
+
+    .card-spa {
+      background: #26161F;
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      color: #FAF7F4;
+      transform: rotate(1deg);
+      z-index: 4;
+      box-shadow: 0 16px 36px rgba(18, 11, 15, 0.25);
+    }
+
+    /* Elemen Internal Card */
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-art-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+
+    .card-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 1.15rem;
+    }
+
+    .card-cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+    .card-cta-link:hover {
+      gap: 0.65rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .peppermint-card {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .hand-left-actor, .hand-right-actor {
+        display: none !important;
+      }
+      .hand-clasp-actor {
+        opacity: 1 !important;
+        transform: translate(-50%, -50%) !important;
+      }
+      .partnership-trust-badge {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* ==========================================================================
+       SECTION: KEMITRAAN & ANIMASI JABAT TANGAN (EDGE-TO-CENTER KINETIC)
+       ========================================================================== */
+    .partnership-section-stage {
+      padding: 4rem 1.25rem 4.5rem;
+      background: #26161F; /* Deep Plum Signature Contrast */
+      color: #FAF7F4;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Ambient Lighting Glow di Balik Tangan */
+    .partnership-glow-bg {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 44, 109, 0.22) 0%, rgba(38, 22, 31, 0) 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .partnership-header {
+      text-align: center;
+      position: relative;
+      z-index: 5;
+      margin-bottom: 1.5rem;
+    }
+
+    .partnership-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #FFB3C6;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .partnership-heading {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      line-height: 1.25;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+    }
+
+    .partnership-desc {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: rgba(250, 247, 244, 0.85);
+      max-width: 330px;
+      margin: 0 auto;
+    }
+
+    /* Stage Teater Animasi Tangan */
+    .handshake-kinetic-stage {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      margin: 1.25rem 0 1.5rem;
+      overflow: hidden; /* Mencegah overflow horizontal saat tangan di luar layar */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 4;
+    }
+
+    /* Aktor 1: Tangan Kiri (Mulai dari Luar Layar Pojok Kiri -120%) */
+    .hand-left-actor {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%) translateX(-120%);
+      width: 53%;
+      height: auto;
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    /* Aktor 2: Tangan Kanan (Mulai dari Luar Layar Pojok Kanan +120%) */
+    .hand-right-actor {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) translateX(120%);
+      width: 51%;
+      height: auto;
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    /* Aktor 3: Tangan Berjabat Erat di Tengah */
+    .hand-clasp-actor {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      pointer-events: none;
+      will-change: transform, opacity;
+    }
+
+    /* Lencana Kepercayaan (Trust Badge) Muncul Saat Jabat Tangan Terkunci */
+    .partnership-trust-badge {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.8);
+      opacity: 0;
+      background: rgba(232, 44, 109, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #FFFFFF;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 6px 18px rgba(232, 44, 109, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      z-index: 6;
+      will-change: transform, opacity;
+    }
+
+    /* ==========================================================================
+       SECTION 4: BUILT FOR YOU (STACKED DECK CARDS - PEPPERMINT STYLE)
+       ========================================================================== */
+    .built-section-stage {
+      padding: 3.5rem 0 3rem;
+      background: #FAF5EB; /* Warm Butter Ivory */
+      position: relative;
+      overflow: hidden;
+    }
+
+    .built-header-wrap {
+      padding: 0 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .built-eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #FFFFFF;
+      color: var(--color-accent);
+      border: 1px solid var(--color-blush-border);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(232, 44, 109, 0.06);
+      margin-bottom: 0.65rem;
+    }
+
+    .built-main-title {
+      font-family: var(--font-brand);
+      font-size: 2.35rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: #121E36;
+      line-height: 1.1;
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .built-sparkle-star {
+      color: #E82C6D;
+      font-size: 1.35rem;
+      animation: pulse-ring 2.5s infinite;
+      display: inline-block;
+    }
+
+    .built-subtitle {
+      font-size: 0.9rem;
+      color: #64748B;
+      line-height: 1.55;
+    }
+
+    /* Track Kontainer Kartu Tumpuk (Stack Deck) */
+    .built-deck-track {
+      display: flex;
+      gap: 1rem;
+      padding: 0.5rem 1.25rem 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .built-deck-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .built-deck-card {
+      flex: 0 0 280px;
+      height: 380px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      scroll-snap-align: center;
+      box-shadow: 0 16px 36px rgba(18, 30, 54, 0.12);
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+      cursor: grab;
+      user-select: none;
+      background: #FFFFFF;
+    }
+
+    .built-deck-card:active {
+      cursor: grabbing;
+      transform: scale(0.98);
+    }
+
+    .built-card-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .built-deck-card:hover .built-card-photo {
+      transform: scale(1.05);
+    }
+
+    .built-card-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(18, 30, 54, 0.05) 0%, rgba(18, 30, 54, 0.35) 55%, rgba(18, 30, 54, 0.88) 100%);
+      z-index: 2;
+    }
+
+    .built-card-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem 1.35rem;
+      z-index: 3;
+      color: #FFFFFF;
+    }
+
+    .built-card-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .built-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.22;
+      color: #FFFFFF;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .built-card-desc {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0.85rem;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    }
+
+    .built-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #FFB3C6;
+      text-decoration: none;
+    }
+
+    /* Petunjuk Geser (Swipe Hint Pill) */
+    .built-swipe-hint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #8E7A87;
+      margin-top: 0.5rem;
+    }
+
+    /* ==========================================================================
+       SECTION 5: MOMTERA PRODUCT REVEAL (GAMBAR 4 SCROLL KINETIC REVEAL)
+       ========================================================================== */
+    .momtera-reveal-stage {
+      background: #140E16; /* Deep Night Plum */
+      position: relative;
+      padding: 0 1.25rem 4rem;
+      overflow: hidden;
+      color: #FAF7F4;
+    }
+
+    /* Pembatas Lengkung Organik dari Cream ke Gelap (Gambar 4 Style) */
+    .momtera-curve-divider {
+      width: 100%;
+      height: 48px;
+      margin-bottom: 2.5rem;
+      margin-left: -1.25rem;
+      margin-right: -1.25rem;
+      width: calc(100% + 2.5rem);
+    }
+    .momtera-curve-divider svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .momtera-header-block {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    .momtera-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(232, 44, 109, 0.15);
+      color: #FFB3C6;
+      border: 1px solid rgba(232, 44, 109, 0.3);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .momtera-main-title {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #FFFFFF;
+      margin-bottom: 0.65rem;
+    }
+
+    .momtera-main-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(250, 247, 244, 0.85);
+      max-width: 330px;
+      margin: 0 auto;
+    }
+
+    /* Stage Teater Kinetik Tangan Momtera */
+    .momtera-kinetic-theater {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      margin: 1.5rem 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Ambient Spotlight Glow di Balik Produk */
+    .momtera-ambient-glow {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 44, 109, 0.28) 0%, rgba(20, 14, 22, 0) 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Aktor Tangan Memegang Botol Momtera (Meluncur Naik dari Bawah Kanan) */
+    .momtera-hand-actor {
+      position: absolute;
+      right: -25px;
+      bottom: -60px;
+      width: 285px;
+      height: auto;
+      z-index: 4;
+      pointer-events: none;
+      will-change: transform, opacity;
+      transform: translateY(100px) rotate(8deg);
+      opacity: 0;
+    }
+
+    /* Floating Formula Badges (Kartu Melayang ala Gambar 4) */
+    .momtera-float-badge {
+      position: absolute;
+      z-index: 5;
+      padding: 0.45rem 0.85rem;
+      border-radius: 14px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      will-change: transform, opacity;
+      opacity: 0;
+      transform: scale(0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .badge-float-1 {
+      top: 18%;
+      left: 10px;
+      background: #FDFBF7;
+      color: #121E36;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transform: rotate(-6deg);
+    }
+
+    .badge-float-2 {
+      top: 42%;
+      left: 6px;
+      background: #EBF8F4;
+      color: #13382E;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      transform: rotate(4deg);
+    }
+
+    .badge-float-3 {
+      top: 10%;
+      right: 20px;
+      background: #FDF0F4;
+      color: var(--color-accent);
+      border: 1px solid rgba(232, 44, 109, 0.3);
+      transform: rotate(5deg);
+    }
+
+    .badge-float-4 {
+      bottom: 22%;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #FAF7F4;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transform: rotate(-3deg);
+    }
+
+    /* CTA Tombol Shopee Official */
+    .btn-momtera-shopee {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: #EE4D2D;
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(238, 77, 45, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.25s ease;
+      position: relative;
+      z-index: 10;
+      margin-top: 1rem;
+    }
+    .btn-momtera-shopee:active {
+      transform: scale(0.98);
+    }
+
+    /* ==========================================================================
+       SECTION 6: FAQ ACCORDION (INTERAKTIF & HUMANIS)
+       ========================================================================== */
+    .faq-section-stage {
+      padding: 3.5rem 1.25rem 4rem;
+      background: var(--color-canvas);
+      position: relative;
+    }
+
+    .faq-header-wrap {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .faq-eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #FFFFFF;
+      color: var(--color-accent);
+      border: 1px solid var(--color-blush-border);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(232, 44, 109, 0.06);
+      margin-bottom: 0.65rem;
+    }
+
+    .faq-main-title {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      line-height: 1.22;
+      color: var(--color-heading);
+      margin-bottom: 0.65rem;
+      font-weight: 700;
+    }
+
+    .faq-main-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--color-body);
+      max-width: 330px;
+      margin: 0 auto;
+    }
+
+    /* List Accordion */
+    .faq-accordion-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      max-width: 100%;
+    }
+
+    .faq-item {
+      background: #FFFFFF;
+      border-radius: 18px;
+      border: 1px solid var(--color-border-subtle);
+      box-shadow: 0 4px 16px rgba(38, 22, 31, 0.03);
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .faq-item.active {
+      border-color: rgba(232, 44, 109, 0.3);
+      box-shadow: 0 8px 24px rgba(232, 44, 109, 0.08);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 1.15rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-heading);
+      line-height: 1.4;
+    }
+
+    .faq-icon-rotator {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-blush);
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s ease;
+    }
+    .faq-item.active .faq-icon-rotator {
+      transform: rotate(180deg);
+      background: var(--color-accent);
+      color: #FFFFFF;
+    }
+
+    .faq-answer-collapse {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .faq-item.active .faq-answer-collapse {
+      max-height: 200px;
+    }
+
+    .faq-answer-body {
+      padding: 0 1.25rem 1.25rem;
+      font-size: 0.88rem;
+      color: var(--color-body);
+      line-height: 1.65;
+      border-top: 1px dashed rgba(38, 22, 31, 0.06);
+      padding-top: 0.85rem;
+    }
+
+    /* Footer Hubungi Kami Card */
+    .faq-help-box {
+      margin-top: 2rem;
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 1.35rem 1.25rem;
+      border: 1px dashed var(--color-blush-border);
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(38, 22, 31, 0.03);
+    }
+    .faq-help-text {
+      font-size: 0.85rem;
+      color: var(--color-body);
+      margin-bottom: 0.85rem;
+    }
+    .faq-help-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      background: var(--color-blush);
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid var(--color-blush-border);
+      transition: all 0.2s ease;
+    }
+    .faq-help-btn:active {
+      transform: scale(0.97);
     }
 
     /* Sticky Bottom Thumb Bar */
@@ -485,20 +1336,8 @@
           <span>Bidan Siaga 24 Jam</span>
         </div>
 
-        <a href="#about" class="hero-logo-btn" aria-label="Profil Bidan Afita">
-          <!-- 8-Petal Pinwheel Rosette Symbol -->
-          <svg class="hero-rosette-spin" viewBox="-50 -50 100 100" fill="currentColor">
-            <g id="hero-petals">
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(45)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(90)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(135)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(180)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(225)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(270)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(315)" />
-            </g>
-          </svg>
+        <a href="#get-in-touch" class="hero-logo-btn" aria-label="Profil Bidan Afita">
+          <img src="assets/logo-official.webp" alt="Logo Resmi Bidanku Afita" class="hero-logo-img">
         </a>
       </div>
 
@@ -533,155 +1372,414 @@
     </header>
 
     <!-- ========================================================================
-         SECTION 2: ABOUT ME & SIGNATURE (TANDA TANGAN RESMI ALEX BRUSH)
+         SECTION 2: GET IN TOUCH WITH US (PEPPERMINT STYLE 4-CARD STACK)
          ======================================================================== -->
-    <section class="mobile-section" id="about" style="background-color: var(--color-canvas);">
-      <span class="section-pill-tag">
-        <i data-lucide="heart" style="width: 12px; height: 12px;"></i>
-        Maternal Care & Gentle Birth
-      </span>
-      <h2 style="font-size: 1.75rem; line-height: 1.25; margin-bottom: 0.75rem;">
-        "Persalinan bukan momen yang menakutkan, melainkan ibadah terindah."
-      </h2>
-      <p style="color: var(--color-body); font-size: 0.95rem; line-height: 1.65;">
-        Bidan Afita, Amd.Keb mendedikasikan praktiknya di Tawangrejeni, Turen untuk menghadirkan suasana persalinan alami yang minim trauma, penuh kehangatan, serta didukung panduan medis resmi terpercaya.
-      </p>
-
-      <!-- About Card dengan Tanda Tangan Alex Brush Sesuai Spek -->
-      <div class="about-card">
-        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-          <div style="width: 48px; height: 48px; border-radius: 50%; overflow: hidden; border: 2px solid var(--color-accent); flex-shrink: 0;">
-            <img src="assets/avatar.webp" alt="Avatar Bidan Afita" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
-          </div>
-          <div>
-            <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0; line-height: 1.2;">Afita, Amd.Keb</h3>
-            <p style="font-size: 0.78rem; color: var(--color-muted); margin: 0;">Praktik Mandiri Bidan Berlisensi Resmi (SIPB)</p>
-          </div>
+    <section class="touch-section-stage" id="get-in-touch">
+      
+      <!-- Header Seksi -->
+      <div class="touch-header-wrap">
+        <div class="touch-eyebrow-pill">
+          <i data-lucide="sparkles" style="width: 14px; height: 14px; color: var(--color-accent);"></i>
+          <span>GET IN TOUCH WITH US</span>
         </div>
-
-        <p style="font-size: 0.9rem; color: var(--color-body); line-height: 1.6; margin-bottom: 0.5rem;">
-          <em>"Bunda tidak harus menanggung kekhawatiran menjelang hari persalinan sendirian. Pintu klinik kami selalu terbuka untuk mendengar dan merawat dengan sepenuh hati."</em>
+        <h2 class="touch-main-heading">
+          Layanan Terpadu untuk Bunda & Buah Hati
+        </h2>
+        <p class="touch-main-desc">
+          Dari persiapan kehamilan hingga perawatan si kecil, Bidan Afita siap mendampingi dengan penuh kehangatan dan standar medis profesional.
         </p>
+      </div>
 
-        <!-- Signature Akses Singkat (HANYA DI ABOUT ME SESUAI ATURAN PENGGUNA) -->
-        <div class="signature-wrap">
-          <div>
-            <span class="signature-text">Bidan Afita</span>
-            <div class="signature-title">Bidan Praktik Mandiri • Turen</div>
+      <!-- Tumpukan 4 Card Peppermint Staggered -->
+      <div class="touch-cards-stack">
+
+        <!-- KARTU 1: Sukses Promil -->
+        <article class="peppermint-card card-promil" data-speed="1.05">
+          <div class="card-top-row">
+            <div class="card-art-box" style="background: #FFF1F4; color: var(--color-accent);">
+              <i data-lucide="heart-pulse" style="width: 28px; height: 28px;"></i>
+            </div>
+            <span class="card-badge" style="background: rgba(232, 44, 109, 0.1); color: var(--color-accent);">Program Hamil</span>
           </div>
-          <div style="text-align: right;">
-            <span style="font-size: 0.7rem; font-weight: 700; color: var(--color-accent); background: var(--color-blush); padding: 0.25rem 0.6rem; border-radius: 6px;">SIPB RESMI</span>
+          <h3 class="card-title">Sukses Promil</h3>
+          <p class="card-desc" style="color: var(--color-body);">
+            Pendampingan promil terarah dengan evaluasi siklus ovulasi, skrining USG rahim, dan panduan nutrisi personal untuk maksimalkan ikhtiar bunda & ayah.
+          </p>
+          <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20konsultasi%20Program%20Hamil%20(Promil)..." target="_blank" rel="noopener noreferrer" class="card-cta-link" style="color: var(--color-accent);">
+            <span>Konsultasi Promil</span>
+            <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+          </a>
+        </article>
+
+        <!-- KARTU 2: Fleksibilitas -->
+        <article class="peppermint-card card-flex" data-speed="1.1">
+          <div class="card-top-row">
+            <div class="card-art-box" style="background: #FFFFFF; color: var(--color-accent);">
+              <i data-lucide="video" style="width: 28px; height: 28px;"></i>
+            </div>
+            <span class="card-badge" style="background: #FFFFFF; color: var(--color-accent);">Online & Offline</span>
           </div>
-        </div>
+          <h3 class="card-title">Fleksibilitas</h3>
+          <p class="card-desc" style="color: var(--color-body);">
+            Konsultasi kehamilan & laktasi privat dari rumah via Zoom atau temu langsung di klinik tanpa antre lama. Jadwal fleksibel menyesuaikan waktu nyaman bunda.
+          </p>
+          <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20jadwalkan%20konsultasi%20Zoom/Klinik..." target="_blank" rel="noopener noreferrer" class="card-cta-link" style="color: var(--color-accent);">
+            <span>Booking Jadwal Temu</span>
+            <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+          </a>
+        </article>
+
+        <!-- KARTU 3: Keluarga Berencana -->
+        <article class="peppermint-card card-kb" data-speed="1.05">
+          <div class="card-top-row">
+            <div class="card-art-box" style="background: #FFFFFF; color: #10B981;">
+              <i data-lucide="shield-check" style="width: 28px; height: 28px;"></i>
+            </div>
+            <span class="card-badge" style="background: #FFFFFF; color: #059669;">KB Aman & Nyaman</span>
+          </div>
+          <h3 class="card-title" style="color: #13382E;">Keluarga Berencana</h3>
+          <p class="card-desc" style="color: #2D584C;">
+            Pemasangan dan lepas IUD, implan, hingga suntik hormonal dengan teknik minim rasa nyeri serta konseling mendalam agar bunda mantap memilih.
+          </p>
+          <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20konsultasi%20layanan%20Keluarga%20Berencana%20(KB)..." target="_blank" rel="noopener noreferrer" class="card-cta-link" style="color: #059669;">
+            <span>Tanya Pilihan KB</span>
+            <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+          </a>
+        </article>
+
+        <!-- KARTU 4: Baby SPA -->
+        <article class="peppermint-card card-spa" data-speed="1.15">
+          <div class="card-top-row">
+            <div class="card-art-box" style="background: rgba(255,255,255,0.12); color: #FFB3C6;">
+              <i data-lucide="sparkles" style="width: 28px; height: 28px;"></i>
+            </div>
+            <span class="card-badge" style="background: rgba(255, 255, 255, 0.15); color: #FFB3C6;">Tumbuh Kembang</span>
+          </div>
+          <h3 class="card-title" style="color: #FFFFFF;">Baby SPA</h3>
+          <p class="card-desc" style="color: rgba(255, 255, 255, 0.82);">
+            Stimulasi motorik dan relaksasi si kecil lewat gentle baby massage dan hydrotherapy bersertifikat medis untuk tidur lebih lelap dan tumbuh optimal.
+          </p>
+          <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20reservasi%20Baby%20SPA%20untuk%20si%20kecil..." target="_blank" rel="noopener noreferrer" class="card-cta-link" style="color: #FFB3C6;">
+            <span>Reservasi Baby SPA</span>
+            <i data-lucide="arrow-up-right" style="width: 16px; height: 16px;"></i>
+          </a>
+        </article>
+
       </div>
     </section>
 
     <!-- ========================================================================
-         SECTION 3: LAYANAN MEDIS UNGGULAN (KATALOG PRAKTIK MANDIRI)
+         SECTION 3: KEMITRAAN & ANIMASI JABAT TANGAN (EDGE-TO-CENTER KINETIC)
          ======================================================================== -->
-    <section class="mobile-section" id="layanan" style="background-color: #FFFFFF; border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle);">
-      <span class="section-pill-tag">
-        <i data-lucide="stethoscope" style="width: 12px; height: 12px;"></i>
-        Layanan Medis
-      </span>
-      <h2 style="font-size: 1.65rem; line-height: 1.25; margin-bottom: 1.5rem;">
-        Pendampingan Medis Sepenuh Hati
-      </h2>
+    <section class="partnership-section-stage" id="partnership">
+      
+      <!-- Halo Glow Latar Belakang -->
+      <div class="partnership-glow-bg"></div>
 
-      <!-- Layanan 1: USG -->
-      <div class="service-card-m">
-        <div class="service-icon-box">
-          <i data-lucide="scan" style="width: 22px; height: 22px;"></i>
+      <!-- Header Seksi -->
+      <div class="partnership-header">
+        <div class="partnership-tag">
+          <i data-lucide="handshake" style="width: 13px; height: 13px;"></i>
+          <span>KOMITMEN & KEMITRAAN RESMI</span>
         </div>
-        <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem;">Pemeriksaan USG 2D & 4D</h3>
-        <p style="font-size: 0.88rem; color: var(--color-body); line-height: 1.6; margin-bottom: 1rem;">
-          Skrining perkembangan janin, denyut jantung bayi, dan visual wajah 4D yang jelas dengan penjelasan teliti dan bersahabat.
+        <h2 class="partnership-heading">
+          Genggaman Hangat di Setiap Langkah Bunda
+        </h2>
+        <p class="partnership-desc">
+          Bukan sekadar tindakan medis, kami hadir sebagai sahabat yang siap mendampingi proses kehamilan hingga persalinan dengan ketulusan dan rasa aman.
         </p>
-        <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20tanya%20jadwal%20USG..." target="_blank" style="color: var(--color-accent); font-weight: 700; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
-          <span>Jadwalkan USG</span>
-          <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
-        </a>
       </div>
 
-      <!-- Layanan 2: Persalinan 24 Jam -->
-      <div class="service-card-m" style="border: 1.5px solid var(--color-blush-border); background: var(--color-card-alt);">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <div class="service-icon-box" style="background: var(--color-accent); color: #fff;">
-            <i data-lucide="clock" style="width: 22px; height: 22px;"></i>
+      <!-- Teater Kinetik Jabat Tangan (Dari Pojok Luar Layar ke Tengah) -->
+      <div class="handshake-kinetic-stage">
+        <!-- Aktor Tangan Kiri (Mulai dari Pojok Kiri Luar) -->
+        <img src="assets/hand-left.webp" class="hand-left-actor" alt="Tangan Bunda Menjangkau">
+
+        <!-- Aktor Tangan Kanan (Mulai dari Pojok Kanan Luar) -->
+        <img src="assets/hand-right.webp" class="hand-right-actor" alt="Tangan Bidan Afita Menyambut">
+
+        <!-- Aktor Genggaman Jabat Tangan Terkunci di Tengah -->
+        <img src="assets/handshake-clasp.webp" class="hand-clasp-actor" alt="Genggaman Hangat Bidan Afita">
+
+        <!-- Lencana Mekar Saat Tangan Bertemu -->
+        <div class="partnership-trust-badge">
+          <i data-lucide="heart" style="width: 13px; height: 13px; fill: currentColor;"></i>
+          <span>Sahabat & Mitra Penuh Kasih</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================
+         SECTION 4: BUILT FOR YOU (PEPPERMINT STACKED DECK CARDS)
+         ======================================================================== -->
+    <section class="built-section-stage" id="built-for-you">
+      <div class="built-header-wrap">
+        <div class="built-eyebrow-pill">
+          <i data-lucide="sparkles" style="width: 13px; height: 13px; color: var(--color-accent);"></i>
+          <span>DEDIKASI KAMI</span>
+        </div>
+        <h2 class="built-main-title">
+          Built for you <span class="built-sparkle-star">✦</span>
+        </h2>
+        <p class="built-subtitle">
+          Ruang aman & layanan kebidanan modern yang dipersonalisasi untuk setiap kenyamanan bunda.
+        </p>
+      </div>
+
+      <!-- Carousel Track Kartu Tumpuk (Swipe / Stack Deck) -->
+      <div class="built-deck-track" id="builtDeckTrack">
+        
+        <!-- KARTU 1: Gentle Birth 24 Jam -->
+        <article class="built-deck-card">
+          <img src="assets/hero.webp" alt="Persalinan Nyaman Bidan Afita" class="built-card-photo" style="object-position: center 20%;">
+          <div class="built-card-scrim"></div>
+          <div class="built-card-info">
+            <span class="built-card-badge">Siaga 24 Jam</span>
+            <h3 class="built-card-title">Gentle Birth & Persalinan</h3>
+            <p class="built-card-desc">Kamar bersalin privat berhawa sejuk dengan panduan napas minim trauma.</p>
+            <span class="built-card-cta">
+              <span>Pelajari Layanan</span>
+              <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+            </span>
           </div>
-          <span style="background: var(--color-accent); color: #fff; font-size: 0.68rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; text-transform: uppercase;">Siaga 24 Jam</span>
-        </div>
-        <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem;">Persalinan Nyaman (Gentle Birth)</h3>
-        <p style="font-size: 0.88rem; color: var(--color-body); line-height: 1.6; margin-bottom: 1rem;">
-          Kamar bersalin privat berhawa sejuk, suami boleh mendampingi penuh, panduan pernapasan minim robekan, dan ramah BPJS.
-        </p>
-        <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20konsultasi%20paket%20persalinan%2024%20jam..." target="_blank" style="color: var(--color-accent); font-weight: 700; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
-          <span>Konsultasi Persalinan</span>
-          <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
-        </a>
+        </article>
+
+        <!-- KARTU 2: USG 2D/4D HD -->
+        <article class="built-deck-card">
+          <img src="assets/avatar.webp" alt="Skrining USG Modern Bidan Afita" class="built-card-photo" style="object-position: center top;">
+          <div class="built-card-scrim"></div>
+          <div class="built-card-info">
+            <span class="built-card-badge">Teknologi Terkini</span>
+            <h3 class="built-card-title">Pemeriksaan USG 2D & 4D</h3>
+            <p class="built-card-desc">Visual wajah janin dan detak jantung yang jelas dengan penjelasan teliti.</p>
+            <span class="built-card-cta">
+              <span>Jadwalkan USG</span>
+              <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- KARTU 3: Sukses Promil -->
+        <article class="built-deck-card">
+          <img src="assets/tanganpegangprodukmomtera.jpeg" alt="Program Hamil & Nutrisi" class="built-card-photo" style="object-position: center 40%;">
+          <div class="built-card-scrim"></div>
+          <div class="built-card-info">
+            <span class="built-card-badge">Program Khusus</span>
+            <h3 class="built-card-title">Program Sukses Promil</h3>
+            <p class="built-card-desc">Evaluasi ovulasi, panduan nutrisi, dan pemantauan siklus bersama pasangan.</p>
+            <span class="built-card-cta">
+              <span>Konsultasi Promil</span>
+              <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- KARTU 4: Baby SPA & Stimulasi -->
+        <article class="built-deck-card">
+          <img src="assets/momtera.webp" alt="Perawatan Bayi & Momtera" class="built-card-photo" style="object-position: center;">
+          <div class="built-card-scrim"></div>
+          <div class="built-card-info">
+            <span class="built-card-badge">Tumbuh Kembang</span>
+            <h3 class="built-card-title">Baby SPA & Pijat Bayi</h3>
+            <p class="built-card-desc">Stimulasi motorik, relaksasi otot, dan perawatan laktasi lancar ASI.</p>
+            <span class="built-card-cta">
+              <span>Reservasi SPA</span>
+              <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+            </span>
+          </div>
+        </article>
+
       </div>
 
-      <!-- Layanan 3: KB Medis & Imunisasi -->
-      <div class="service-card-m">
-        <div class="service-icon-box">
-          <i data-lucide="sparkles" style="width: 22px; height: 22px;"></i>
-        </div>
-        <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem;">Pasang / Bongkar KB & Laktasi</h3>
-        <p style="font-size: 0.88rem; color: var(--color-body); line-height: 1.6; margin-bottom: 1rem;">
-          Spesialis IUD/Implan higienis, perawatan payudara bengkak, pijat laktasi lancar ASI, dan imunisasi berkala bayi.
-        </p>
-        <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20konsultasi%20KB/Pijat%20Laktasi..." target="_blank" style="color: var(--color-accent); font-weight: 700; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
-          <span>Tanya Info KB & Laktasi</span>
-          <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
-        </a>
+      <!-- Swipe Hint -->
+      <div class="built-swipe-hint">
+        <i data-lucide="move-horizontal" style="width: 14px; height: 14px;"></i>
+        <span>Geser kartu ke samping untuk melihat program</span>
       </div>
     </section>
 
     <!-- ========================================================================
-         SECTION 4: MOMTERA GEL (PRODUK RESMI AFITA GROUP)
+         SECTION 5: MOMTERA PRODUCT REVEAL (GAMBAR 4 SCROLL KINETIC REVEAL)
          ======================================================================== -->
-    <section class="mobile-section" id="momtera" style="background-color: var(--color-canvas);">
-      <div class="momtera-card-m">
-        <span class="section-pill-tag" style="background: #FFFFFF;">
-          <i data-lucide="package" style="width: 12px; height: 12px;"></i>
-          Produk Resmi Bidan Afita
-        </span>
-        <h2 style="font-size: 1.5rem; line-height: 1.25; margin-bottom: 0.75rem;">
+    <section class="momtera-reveal-stage" id="momtera-reveal">
+      
+      <!-- Pembatas Lengkung Organik dari Cream ke Gelap (Gambar 4 Style) -->
+      <div class="momtera-curve-divider">
+        <svg viewBox="0 0 412 48" preserveAspectRatio="none">
+          <path d="M0,0 Q206,48 412,0 L412,48 L0,48 Z" fill="#140E16" />
+        </svg>
+      </div>
+
+      <!-- Header Momtera -->
+      <div class="momtera-header-block">
+        <div class="momtera-badge-tag">
+          <i data-lucide="package" style="width: 13px; height: 13px;"></i>
+          <span>PRODUK RESMI AFITA GROUP</span>
+        </div>
+        <h2 class="momtera-main-title">
           MOMTERA™ Massage Gel
         </h2>
-        <p style="font-size: 0.88rem; color: var(--color-body); line-height: 1.6; margin-bottom: 1.25rem;">
+        <p class="momtera-main-desc">
           Formula pijat perineum untuk meningkatkan elastisitas jalan lahir agar persalinan minim robekan, serta memudarkan stretchmark secara aman.
         </p>
+      </div>
 
-        <div style="border-radius: 16px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid rgba(232, 44, 109, 0.2);">
-          <img src="assets/momtera.webp" alt="Produk Momtera Gel Bidan Afita" style="width: 100%; height: auto; display: block;">
+      <!-- Panggung Kinetik Tangan Momtera (Gambar 4 Style) -->
+      <div class="momtera-kinetic-theater">
+        <!-- Spotlight Glow -->
+        <div class="momtera-ambient-glow"></div>
+
+        <!-- Floating Formula Badges (Kartu Melayang ala Gambar 4) -->
+        <div class="momtera-float-badge badge-float-1">
+          <i data-lucide="droplet" style="width: 13px; height: 13px; color: var(--color-wa);"></i>
+          <span>Waterbased Gel</span>
         </div>
 
-        <a href="https://shopee.co.id/momteraofficial" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: #EE4D2D; color: #fff; font-weight: 700; font-size: 0.88rem; padding: 0.8rem 1rem; border-radius: 999px; text-decoration: none; box-shadow: 0 4px 14px rgba(238, 77, 45, 0.3);">
-          <i data-lucide="shopping-bag" style="width: 17px; height: 17px;"></i>
-          <span>Order di Shopee Official (Bisa COD)</span>
-        </a>
+        <div class="momtera-float-badge badge-float-2">
+          <i data-lucide="sparkles" style="width: 13px; height: 13px; color: #10B981;"></i>
+          <span>Collagen & HA</span>
+        </div>
+
+        <div class="momtera-float-badge badge-float-3">
+          <i data-lucide="shield-check" style="width: 13px; height: 13px; color: var(--color-accent);"></i>
+          <span>Minim Robekan</span>
+        </div>
+
+        <div class="momtera-float-badge badge-float-4">
+          <i data-lucide="check" style="width: 13px; height: 13px; color: #FFB3C6;"></i>
+          <span>Aman Bumil & Busui</span>
+        </div>
+
+        <!-- Aktor Tangan Memegang Momtera (Meluncur Naik dari Bawah Kanan) -->
+        <img src="assets/hand-momtera-angled.webp" class="momtera-hand-actor" alt="Tangan Memegang Momtera Massage Gel">
       </div>
+
+      <!-- CTA Shopee Official -->
+      <a href="https://shopee.co.id/momteraofficial" target="_blank" rel="noopener noreferrer" class="btn-momtera-shopee">
+        <i data-lucide="shopping-bag" style="width: 18px; height: 18px;"></i>
+        <span>Order di Shopee Official (Bisa COD)</span>
+      </a>
+
     </section>
 
     <!-- ========================================================================
-         SECTION 5: FOOTER (BRANDMARK IDENTITAS & LEGAL TRUST)
+         SECTION 6: FAQ ACCORDION (PERTANYAAN YANG SERING DITANYAKAN)
+         ======================================================================== -->
+    <section class="faq-section-stage" id="faq">
+      
+      <!-- Header Seksi -->
+      <div class="faq-header-wrap">
+        <div class="faq-eyebrow-pill">
+          <i data-lucide="help-circle" style="width: 13px; height: 13px; color: var(--color-accent);"></i>
+          <span>PUSAT INFORMASI & JAWABAN</span>
+        </div>
+        <h2 class="faq-main-title">
+          Pertanyaan yang Sering Bunda Tanyakan
+        </h2>
+        <p class="faq-main-desc">
+          Kumpulan jawaban penting seputar layanan konsultasi, jadwal USG, persalinan, hingga produk resmi Bidan Afita.
+        </p>
+      </div>
+
+      <!-- Daftar Accordion FAQ -->
+      <div class="faq-accordion-list">
+
+        <!-- FAQ Item 1 (Default Active) -->
+        <div class="faq-item active">
+          <button class="faq-trigger" type="button" aria-expanded="true">
+            <span>Haruskah membuat janji sebelum periksa USG?</span>
+            <div class="faq-icon-rotator">
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer-collapse" style="max-height: 200px;">
+            <div class="faq-answer-body">
+              Sangat disarankan untuk reservasi jadwal terlebih dahulu via WhatsApp agar bunda tidak perlu menunggu lama dan mendapatkan alokasi waktu konsultasi privat yang nyaman.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Apakah suami boleh mendampingi saat persalinan?</span>
+            <div class="faq-icon-rotator">
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer-collapse">
+            <div class="faq-answer-body">
+              Ya, tentu! Bidan Afita mendukung penuh filosofi <em>Gentle Birth</em>. Kamar bersalin kami berkonsep privat sehingga suami dan keluarga inti dapat mendampingi penuh untuk memberikan rasa hangat.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Kapan waktu paling optimal untuk USG 4D?</span>
+            <div class="faq-icon-rotator">
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer-collapse">
+            <div class="faq-answer-body">
+              Waktu terbaik untuk melihat visual wajah janin secara jelas adalah pada usia kehamilan 26 hingga 30 minggu, saat air ketuban masih melimpah dan posisi janin ideal.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Apakah Momtera Gel aman untuk bumil & busui?</span>
+            <div class="faq-icon-rotator">
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer-collapse">
+            <div class="faq-answer-body">
+              Sangat aman. Momtera diformulasikan khusus dengan bahan dasar air (<em>waterbased</em>), Collagen, dan Hyaluronic Acid tanpa bahan kimia keras untuk meningkatkan elastisitas perineum dan anti-stretchmark.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Di mana alamat klinik dan apakah buka 24 jam?</span>
+            <div class="faq-icon-rotator">
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer-collapse">
+            <div class="faq-answer-body">
+              Klinik berlokasi di Lowokwaru, Tawangrejeni, Kec. Turen, Kab. Malang. Layanan gawat darurat & persalinan siaga 24 jam penuh, sedangkan periksa rutin dibuka sesuai konfirmasi janji.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Kotak Bantuan Tambahan -->
+      <div class="faq-help-box">
+        <p class="faq-help-text">Masih memiliki pertanyaan lain yang belum terjawab?</p>
+        <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20tanya%20seputar%20layanan..." target="_blank" rel="noopener noreferrer" class="faq-help-btn">
+          <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i>
+          <span>Tanya Langsung ke Bidan Afita</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================
+         SECTION 7: FOOTER (BRANDMARK IDENTITAS & LEGAL TRUST)
          ======================================================================== -->
     <footer class="mobile-footer">
       <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
-        <div style="width: 38px; height: 38px; border-radius: 10px; background: var(--color-accent); display: flex; align-items: center; justify-content: center; color: #fff;">
-          <svg style="width: 20px; height: 20px; animation: spin-soft 26s linear infinite;" viewBox="-50 -50 100 100" fill="currentColor">
-            <g>
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(45)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(90)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(135)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(180)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(225)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(270)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(315)" />
-            </g>
-          </svg>
+        <div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(232, 44, 109, 0.3); border: 1.5px solid rgba(255, 255, 255, 0.25);">
+          <img src="assets/logo-official.webp" alt="Logo Resmi Bidanku Afita" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <div>
           <span style="font-family: var(--font-brand); font-size: 1.35rem; font-weight: 800; letter-spacing: -0.04em; color: #FFFFFF; display: block; line-height: 1;">
@@ -737,6 +1835,222 @@
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    // Integrasi GSAP ScrollTrigger dengan Lenis
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animasi Muncul Satu Demi Satu (Smooth Staggered Scroll) untuk Kartu Peppermint
+    const cards = gsap.utils.toArray('.peppermint-card');
+    
+    cards.forEach((card, index) => {
+      // Ambil target rotasi dari class spesifik
+      const isNegative = card.classList.contains('card-promil') || card.classList.contains('card-kb');
+      const targetRotation = isNegative ? (index === 0 ? -2 : -1.5) : (index === 1 ? 2 : 1);
+
+      gsap.fromTo(card, 
+        {
+          opacity: 0,
+          y: 60,
+          scale: 0.94,
+          rotation: 0
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          rotation: targetRotation,
+          duration: 0.85,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+
+    // ==========================================================================
+    // ANIMASI KINETIK JABAT TANGAN: MELUNCUR DARI POJOK LUAR KE TENGAH
+    // ==========================================================================
+    const handshakeTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#partnership",
+        start: "top 78%",
+        end: "center 52%",
+        scrub: 1.2, // Sinkron mulus dengan kecepatan gulir jari pengguna
+      }
+    });
+
+    handshakeTimeline
+      // 1. Tangan kiri & kanan meluncur masuk serentak dari pojok terluar layar menuju titik tengah
+      .to(".hand-left-actor", {
+        x: "0%",
+        ease: "power2.out",
+        duration: 1
+      }, 0)
+      .to(".hand-right-actor", {
+        x: "0%",
+        ease: "power2.out",
+        duration: 1
+      }, 0)
+      
+      // 2. Tepat saat bersentuhan di tengah, lenyapkan tangan terpisah dan kunci jabat tangan erat
+      .to([".hand-left-actor", ".hand-right-actor"], {
+        opacity: 0,
+        duration: 0.2,
+        ease: "power1.in"
+      }, 0.82)
+      .to(".hand-clasp-actor", {
+        opacity: 1,
+        scale: 1,
+        duration: 0.35,
+        ease: "back.out(1.4)"
+      }, 0.82)
+      
+      // 3. Sentuhan taktil: getaran jabat tangan halus (naik turun sedikit)
+      .to(".hand-clasp-actor", {
+        y: "-53%",
+        duration: 0.18,
+        yoyo: true,
+        repeat: 1,
+        ease: "sine.inOut"
+      }, 1.1)
+      
+      // 4. Mekarkan lencana kemitraan & cinta di atas genggaman
+      .to(".partnership-trust-badge", {
+        opacity: 1,
+        scale: 1,
+        duration: 0.35,
+        ease: "back.out(1.6)"
+      }, 1.05);
+
+    // ==========================================================================
+    // SEKSI BUILT FOR YOU: KARTU TUMPUK (STACKED DECK CAROUSEL EFEK KERTAS)
+    // ==========================================================================
+    const deckTrack = document.getElementById('builtDeckTrack');
+    const deckCards = gsap.utils.toArray('.built-deck-card');
+
+    if (deckTrack && deckCards.length > 0) {
+      // Efek geser bertumpuk dinamis saat pengguna swipe / scroll track horizontal
+      deckTrack.addEventListener('scroll', () => {
+        const scrollLeft = deckTrack.scrollLeft;
+        const cardWidth = 280 + 16; // width + gap
+
+        deckCards.forEach((card, index) => {
+          const cardOffset = index * cardWidth;
+          const diff = scrollLeft - cardOffset;
+
+          if (diff > 0) {
+            // Kartu yang sudah ditarik/dilewati akan menumpuk rapi di belakangnya (seperti Gambar 3)
+            const progress = Math.min(diff / cardWidth, 1);
+            const scale = 1 - progress * 0.08;
+            const xOffset = diff * 0.75;
+            const rot = -progress * 2.5;
+
+            gsap.set(card, {
+              scale: scale,
+              x: xOffset,
+              rotation: rot,
+              boxShadow: '0 8px 24px rgba(18, 30, 54, 0.18)',
+              zIndex: index,
+            });
+          } else {
+            // Kartu yang sedang aktif atau di depan
+            gsap.set(card, {
+              scale: 1,
+              x: 0,
+              rotation: 0,
+              boxShadow: '0 16px 36px rgba(18, 30, 54, 0.12)',
+              zIndex: index + 10,
+            });
+          }
+        });
+      }, { passive: true });
+    }
+
+    // ==========================================================================
+    // SEKSI MOMTERA: TANGAN MELUNCUR NAIK & BADGE MELAYANG (GAMBAR 4 REVEAL)
+    // ==========================================================================
+    const momteraTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#momtera-reveal",
+        start: "top 72%",
+        end: "center 48%",
+        scrub: 1.2,
+      }
+    });
+
+    momteraTimeline
+      // 1. Tangan pemegang produk meluncur naik dari pojok kanan bawah ke posisi tengah
+      .fromTo(".momtera-hand-actor", 
+        {
+          y: 180,
+          x: 70,
+          rotation: 12,
+          opacity: 0.2
+        },
+        {
+          y: 0,
+          x: 0,
+          rotation: 0,
+          opacity: 1,
+          ease: "power2.out",
+          duration: 1.2
+        },
+        0
+      )
+      // 2. Spotlight ambient mekar
+      .fromTo(".momtera-ambient-glow",
+        {
+          scale: 0.5,
+          opacity: 0
+        },
+        {
+          scale: 1.15,
+          opacity: 1,
+          duration: 1
+        },
+        0.2
+      )
+      // 3. Floating Badges mekar melayang satu per satu (seperti kartu/confetti di Gambar 4)
+      .to(".badge-float-1", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.4)
+      .to(".badge-float-2", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.55)
+      .to(".badge-float-3", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.7)
+      .to(".badge-float-4", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.85);
+
+    // ==========================================================================
+    // SEKSI FAQ: INTERAKSI ACCORDION TOGGLE HALUS
+    // ==========================================================================
+    const faqTriggers = document.querySelectorAll('.faq-trigger');
+
+    faqTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const currentItem = trigger.closest('.faq-item');
+        const currentCollapse = currentItem.querySelector('.faq-answer-collapse');
+        const isCurrentlyActive = currentItem.classList.contains('active');
+
+        // Tutup item faq lain yang sedang terbuka
+        document.querySelectorAll('.faq-item').forEach((item) => {
+          if (item !== currentItem) {
+            item.classList.remove('active');
+            item.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+            item.querySelector('.faq-answer-collapse').style.maxHeight = '0px';
+          }
+        });
+
+        // Toggle item yang sedang diklik
+        if (isCurrentlyActive) {
+          currentItem.classList.remove('active');
+          trigger.setAttribute('aria-expanded', 'false');
+          currentCollapse.style.maxHeight = '0px';
+        } else {
+          currentItem.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+          currentCollapse.style.maxHeight = currentCollapse.scrollHeight + 'px';
+        }
+      });
+    });
   </script>
 </body>
 </html>
