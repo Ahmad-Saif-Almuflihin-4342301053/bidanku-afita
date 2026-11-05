@@ -229,24 +229,30 @@
       100% { opacity: 0.6; transform: scale(0.9); }
     }
 
-    /* Pinwheel Logo Rosette Minimalist */
+    /* Official Logo Mini in Top HUD */
     .hero-logo-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: rgba(232, 44, 109, 0.85);
-      backdrop-filter: blur(8px);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(232, 44, 109, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 14px rgba(232, 44, 109, 0.28);
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      background: transparent;
+      padding: 0;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .hero-rosette-spin {
-      width: 20px;
-      height: 20px;
-      animation: spin-soft 26s linear infinite;
+    .hero-logo-btn:active {
+      transform: scale(0.94);
+    }
+    .hero-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 50%;
     }
     @keyframes spin-soft {
       from { transform: rotate(0deg); }
@@ -656,20 +662,8 @@
           <span>Bidan Siaga 24 Jam</span>
         </div>
 
-        <a href="#about" class="hero-logo-btn" aria-label="Profil Bidan Afita">
-          <!-- 8-Petal Pinwheel Rosette Symbol -->
-          <svg class="hero-rosette-spin" viewBox="-50 -50 100 100" fill="currentColor">
-            <g id="hero-petals">
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(45)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(90)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(135)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(180)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(225)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(270)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(315)" />
-            </g>
-          </svg>
+        <a href="#get-in-touch" class="hero-logo-btn" aria-label="Profil Bidan Afita">
+          <img src="assets/logo-official.webp" alt="Logo Resmi Bidanku Afita" class="hero-logo-img">
         </a>
       </div>
 
@@ -803,19 +797,8 @@
          ======================================================================== -->
     <footer class="mobile-footer">
       <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
-        <div style="width: 38px; height: 38px; border-radius: 10px; background: var(--color-accent); display: flex; align-items: center; justify-content: center; color: #fff;">
-          <svg style="width: 20px; height: 20px; animation: spin-soft 26s linear infinite;" viewBox="-50 -50 100 100" fill="currentColor">
-            <g>
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(45)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(90)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(135)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(180)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(225)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(270)" />
-              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(315)" />
-            </g>
-          </svg>
+        <div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(232, 44, 109, 0.3); border: 1.5px solid rgba(255, 255, 255, 0.25);">
+          <img src="assets/logo-official.webp" alt="Logo Resmi Bidanku Afita" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <div>
           <span style="font-family: var(--font-brand); font-size: 1.35rem; font-weight: 800; letter-spacing: -0.04em; color: #FFFFFF; display: block; line-height: 1;">
