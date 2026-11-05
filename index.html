@@ -82,17 +82,26 @@
     }
 
     /* ==========================================================================
-       2. SAMSUNG GALAXY S10 PRECISE DEVICE CONTAINER (360px × 760px CSS VIEWPORT)
+       2. FLUID SITE CONTAINER & VIEWPORT (MOBILE-FIRST SCALE-UP ARCHITECTURE)
        ========================================================================== */
     .mobile-simulator-viewport {
       width: 100%;
-      max-width: 360px; /* Eksak CSS Logical Width Samsung Galaxy S10 / DevTools Preset */
       min-height: 100vh;
       margin: 0 auto;
       background-color: var(--color-canvas);
-      box-shadow: 0 0 60px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
       position: relative;
       overflow-x: hidden;
+    }
+
+    .desktop-header-nav {
+      display: none; /* Tersembunyi di mobile */
+    }
+
+    .desktop-container {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Headings */
@@ -1296,19 +1305,269 @@
       box-shadow: 0 -8px 24px rgba(38, 22, 31, 0.06);
     }
 
-    /* Footer Mobile */
-    .mobile-footer {
-      background: var(--color-heading);
-      color: #FAF7F4;
-      padding: 2.5rem 1.25rem 5.5rem;
-      font-size: 0.8rem;
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS: TABLET SCALE-UP (min-width: 768px)
+       ========================================================================== */
+    @media screen and (min-width: 768px) {
+      .hero-mobile-stage {
+        min-height: 720px;
+      }
+      .touch-cards-stack {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+      .partnership-points-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .deck-carousel-track {
+        gap: 1.5rem;
+      }
+      .deck-product-card {
+        width: 320px;
+        height: 420px;
+      }
+      .faq-accordion-list {
+        gap: 1rem;
+      }
+      .mobile-footer {
+        padding: 3.5rem 2rem 4rem;
+      }
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS: TRUE DESKTOP SCALE-UP (min-width: 1024px)
+       ========================================================================== */
+    @media screen and (min-width: 1024px) {
+      /* Aktifkan Header Desktop Melayang, Sembunyikan Navigasi Mobile */
+      .desktop-header-nav {
+        display: flex;
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(253, 251, 247, 0.92);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--color-border-subtle);
+        z-index: 100;
+        padding: 0.9rem 2rem;
+      }
+      .desktop-header-inner {
+        max-width: 1240px;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .desktop-nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .desktop-nav-link {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--color-heading);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      .desktop-nav-link:hover {
+        color: var(--color-accent);
+      }
+      .desktop-cta-wa {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--color-wa);
+        color: #FFFFFF;
+        padding: 0.65rem 1.35rem;
+        border-radius: 999px;
+        font-size: 0.88rem;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .desktop-cta-wa:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+      }
+
+      /* Sembunyikan HUD Mini & Thumb Bar Mobile */
+      .hero-top-hud {
+        display: none !important;
+      }
+      .thumb-nav-bar {
+        display: none !important;
+      }
+
+      /* Padding Kontainer Desktop */
+      .touch-section-stage,
+      .partnership-section-stage,
+      .deck-section-stage,
+      .momtera-kinetic-stage,
+      .faq-section-stage {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      /* Seksi 1: Hero Editorial Desktop */
+      .hero-mobile-stage {
+        height: calc(100vh - 70px);
+        min-height: 640px;
+        max-height: 820px;
+      }
+      .hero-bottom-content {
+        max-width: 720px;
+        padding: 3rem 2rem 4rem;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .hero-main-title {
+        font-size: 3.2rem;
+        line-height: 1.15;
+      }
+      .hero-lead-text {
+        font-size: 1.15rem;
+        max-width: 580px;
+        margin: 0 auto 2rem;
+      }
+      .hero-cta-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.25rem;
+      }
+      .btn-hero-wa, .btn-hero-sub {
+        width: auto;
+        padding: 0.95rem 2rem;
+        font-size: 0.95rem;
+      }
+
+      /* Seksi 2: Peppermint 4 Kartu Grid */
+      .touch-cards-stack {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+      .peppermint-card {
+        transform: none !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .peppermint-card:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 20px 40px rgba(38, 22, 31, 0.08);
+      }
+
+      /* Seksi 3: Handshake Desktop Sinematik */
+      .handshake-kinetic-stage {
+        height: 280px;
+      }
+      .hand-left-actor, .hand-right-actor {
+        width: 42%;
+      }
+      .hand-clasp-actor {
+        width: 75%;
+        max-width: 780px;
+      }
+
+      /* Seksi 5: Momtera 2-Kolom Split Showcase */
+      .momtera-desktop-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 4rem;
+      }
+
+      /* Seksi 6: FAQ 2-Kolom Split Layout */
+      .faq-desktop-split {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
+      .faq-header-wrap {
+        text-align: left;
+      }
+      .faq-main-desc {
+        margin: 0;
+      }
+
+      /* Seksi 7: Footer Desktop 4-Kolom */
+      .footer-desktop-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
+        gap: 3rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 2rem;
+      }
+      .footer-col-title {
+        font-family: var(--font-heading);
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin-bottom: 1.15rem;
+      }
+      .footer-nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+      .footer-nav-list a {
+        color: #A6929E;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: color 0.2s ease;
+      }
+      .footer-nav-list a:hover {
+        color: #FFB3C6;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- ==========================================================================
-       CONTAINER: SAMSUNG GALAXY S10 MOBILE VIEWPORT LOCK (360px - 412px)
+       TOP DESKTOP STICKY NAVBAR (AUTO HIDE ON MOBILE)
+       ========================================================================== -->
+  <header class="desktop-header-nav">
+    <div class="desktop-header-inner">
+      <a href="#hero" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none;">
+        <img src="assets/logo-official.webp" alt="Logo Bidanku Afita" style="width: 38px; height: 38px; border-radius: 50%; display: block; border: 1px solid rgba(232, 44, 109, 0.2);">
+        <span style="font-family: var(--font-brand); font-size: 1.35rem; font-weight: 800; letter-spacing: -0.04em; color: var(--color-heading);">
+          bidanku<span style="color: var(--color-accent);">afita</span>
+        </span>
+      </a>
+
+      <nav>
+        <ul class="desktop-nav-links">
+          <li><a href="#get-in-touch" class="desktop-nav-link">Layanan</a></li>
+          <li><a href="#partnership" class="desktop-nav-link">Kemitraan</a></li>
+          <li><a href="#deck-cards" class="desktop-nav-link">Keunggulan</a></li>
+          <li><a href="#momtera-reveal" class="desktop-nav-link">Momtera™ Gel</a></li>
+          <li><a href="#faq" class="desktop-nav-link">Tanya Jawab</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20konsultasi..." target="_blank" rel="noopener noreferrer" class="desktop-cta-wa">
+        <i data-lucide="message-circle" style="width: 17px; height: 17px;"></i>
+        <span>Konsultasi WA</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       FLUID SITE WRAPPER (MOBILE-FIRST SCALE-UP CONTAINER)
        ========================================================================== -->
   <main class="mobile-simulator-viewport">
 
@@ -1375,6 +1634,7 @@
          SECTION 2: GET IN TOUCH WITH US (PEPPERMINT STYLE 4-CARD STACK)
          ======================================================================== -->
     <section class="touch-section-stage" id="get-in-touch">
+      <div class="desktop-container">
       
       <!-- Header Seksi -->
       <div class="touch-header-wrap">
@@ -1465,6 +1725,7 @@
           </a>
         </article>
 
+      </div>
       </div>
     </section>
 
@@ -1777,26 +2038,73 @@
          SECTION 7: FOOTER (BRANDMARK IDENTITAS & LEGAL TRUST)
          ======================================================================== -->
     <footer class="mobile-footer">
-      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
-        <div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(232, 44, 109, 0.3); border: 1.5px solid rgba(255, 255, 255, 0.25);">
-          <img src="assets/logo-official.webp" alt="Logo Resmi Bidanku Afita" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      <div class="desktop-container">
+        
+        <!-- Desktop 4-Kolom Grid (Aktif di Layar Besar) -->
+        <div class="footer-desktop-grid">
+          
+          <!-- Kolom 1: Brand & Filosofi -->
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(232, 44, 109, 0.3); border: 1.5px solid rgba(255, 255, 255, 0.25);">
+                <img src="assets/logo-official.webp" alt="Logo Resmi Bidanku Afita" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              </div>
+              <div>
+                <span style="font-family: var(--font-brand); font-size: 1.35rem; font-weight: 800; letter-spacing: -0.04em; color: #FFFFFF; display: block; line-height: 1;">
+                  bidanku<span style="color: var(--color-accent);">afita</span>
+                </span>
+                <span style="font-size: 0.72rem; color: #A6929E; letter-spacing: 0.05em; text-transform: uppercase;">Afita Group • Turen Malang</span>
+              </div>
+            </div>
+            <p style="color: #A6929E; line-height: 1.6; font-size: 0.85rem; margin: 0;">
+              Mendampingi setiap langkah kehamilan hingga persalinan dengan filosofi <em>Gentle Birth</em>, ketulusan cinta, dan standar medis profesional.
+            </p>
+          </div>
+
+          <!-- Kolom 2: Layanan Medis -->
+          <div>
+            <div class="footer-col-title">Layanan Utama</div>
+            <ul class="footer-nav-list">
+              <li><a href="#get-in-touch">Pemeriksaan USG 2D/4D</a></li>
+              <li><a href="#get-in-touch">Persalinan Siaga 24 Jam</a></li>
+              <li><a href="#get-in-touch">Program Sukses Promil</a></li>
+              <li><a href="#get-in-touch">Baby SPA & Hydrotherapy</a></li>
+              <li><a href="#get-in-touch">Keluarga Berencana (KB)</a></li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3: Kontak & Lokasi Klinik -->
+          <div>
+            <div class="footer-col-title">Alamat Praktik</div>
+            <p style="color: #A6929E; line-height: 1.6; font-size: 0.85rem; margin-bottom: 0.75rem;">
+              Praktik Mandiri Bidan Afita, Amd.Keb.<br>
+              Lowokwaru, Tawangrejeni, Kec. Turen, Kab. Malang, Jawa Timur 65175.
+            </p>
+            <p style="color: #FFB3C6; font-size: 0.85rem; font-weight: 700; margin: 0;">
+              Telepon / WA: +62 823-3076-4520
+            </p>
+          </div>
+
+          <!-- Kolom 4: Legalitas & Momtera -->
+          <div>
+            <div class="footer-col-title">Legalitas & Produk</div>
+            <ul class="footer-nav-list">
+              <li><a href="#hero">SIPB Kemenkes Terverifikasi</a></li>
+              <li><a href="#momtera-reveal">Momtera™ Perineum Gel</a></li>
+              <li><a href="https://shopee.co.id/momteraofficial" target="_blank" rel="noopener noreferrer">Shopee Official Store</a></li>
+              <li><a href="#faq">Pusat Tanya Jawab (FAQ)</a></li>
+            </ul>
+          </div>
+
         </div>
-        <div>
-          <span style="font-family: var(--font-brand); font-size: 1.35rem; font-weight: 800; letter-spacing: -0.04em; color: #FFFFFF; display: block; line-height: 1;">
-            bidanku<span style="color: var(--color-accent);">afita</span>
-          </span>
-          <span style="font-size: 0.72rem; color: #A6929E; letter-spacing: 0.05em; text-transform: uppercase;">Afita Group • Turen Malang</span>
+
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; text-align: center; color: #7D6B75; font-size: 0.75rem;">
+          <p style="margin: 0;">
+            &copy; 2026 Bidanku Afita (Afita Group). Seluruh Hak Cipta Dilindungi. Praktik Mandiri Bidan Berizin Resmi.
+          </p>
         </div>
+
       </div>
-
-      <p style="color: #A6929E; line-height: 1.6; margin-bottom: 1rem;">
-        Praktik Mandiri Bidan Afita, Amd.Keb.<br>
-        Lowokwaru, Tawangrejeni, Kec. Turen, Kab. Malang, Jawa Timur 65175.
-      </p>
-
-      <p style="color: #7D6B75; font-size: 0.75rem; margin: 0;">
-        &copy; 2026 Bidanku Afita. Seluruh Hak Cipta Dilindungi.
-      </p>
     </footer>
 
     <!-- ========================================================================
