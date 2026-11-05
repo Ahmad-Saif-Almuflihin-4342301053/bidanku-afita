@@ -760,47 +760,366 @@
       will-change: transform, opacity;
     }
 
-    /* 3 Pilar Trust Bidan Afita */
-    .partnership-points-grid {
+    /* ==========================================================================
+       SECTION 4: BUILT FOR YOU (STACKED DECK CARDS - PEPPERMINT STYLE)
+       ========================================================================== */
+    .built-section-stage {
+      padding: 3.5rem 0 3rem;
+      background: #FAF5EB; /* Warm Butter Ivory */
+      position: relative;
+      overflow: hidden;
+    }
+
+    .built-header-wrap {
+      padding: 0 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .built-eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #FFFFFF;
+      color: var(--color-accent);
+      border: 1px solid var(--color-blush-border);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(232, 44, 109, 0.06);
+      margin-bottom: 0.65rem;
+    }
+
+    .built-main-title {
+      font-family: var(--font-brand);
+      font-size: 2.35rem;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: #121E36;
+      line-height: 1.1;
+      margin-bottom: 0.45rem;
       display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-top: 1rem;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .built-sparkle-star {
+      color: #E82C6D;
+      font-size: 1.35rem;
+      animation: pulse-ring 2.5s infinite;
+      display: inline-block;
+    }
+
+    .built-subtitle {
+      font-size: 0.9rem;
+      color: #64748B;
+      line-height: 1.55;
+    }
+
+    /* Track Kontainer Kartu Tumpuk (Stack Deck) */
+    .built-deck-track {
+      display: flex;
+      gap: 1rem;
+      padding: 0.5rem 1.25rem 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .built-deck-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .built-deck-card {
+      flex: 0 0 280px;
+      height: 380px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      scroll-snap-align: center;
+      box-shadow: 0 16px 36px rgba(18, 30, 54, 0.12);
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+      cursor: grab;
+      user-select: none;
+      background: #FFFFFF;
+    }
+
+    .built-deck-card:active {
+      cursor: grabbing;
+      transform: scale(0.98);
+    }
+
+    .built-card-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .built-deck-card:hover .built-card-photo {
+      transform: scale(1.05);
+    }
+
+    .built-card-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(18, 30, 54, 0.05) 0%, rgba(18, 30, 54, 0.35) 55%, rgba(18, 30, 54, 0.88) 100%);
+      z-index: 2;
+    }
+
+    .built-card-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem 1.35rem;
+      z-index: 3;
+      color: #FFFFFF;
+    }
+
+    .built-card-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .built-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.22;
+      color: #FFFFFF;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .built-card-desc {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0.85rem;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    }
+
+    .built-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #FFB3C6;
+      text-decoration: none;
+    }
+
+    /* Petunjuk Geser (Swipe Hint Pill) */
+    .built-swipe-hint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #8E7A87;
+      margin-top: 0.5rem;
+    }
+
+    /* ==========================================================================
+       SECTION 5: MOMTERA PRODUCT REVEAL (GAMBAR 4 SCROLL KINETIC REVEAL)
+       ========================================================================== */
+    .momtera-reveal-stage {
+      background: #140E16; /* Deep Night Plum */
+      position: relative;
+      padding: 0 1.25rem 4rem;
+      overflow: hidden;
+      color: #FAF7F4;
+    }
+
+    /* Pembatas Lengkung Organik dari Cream ke Gelap (Gambar 4 Style) */
+    .momtera-curve-divider {
+      width: 100%;
+      height: 48px;
+      margin-bottom: 2.5rem;
+      margin-left: -1.25rem;
+      margin-right: -1.25rem;
+      width: calc(100% + 2.5rem);
+    }
+    .momtera-curve-divider svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .momtera-header-block {
+      text-align: center;
+      margin-bottom: 1.5rem;
       position: relative;
       z-index: 5;
     }
 
-    .trust-point-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 1rem 1.15rem;
-      display: flex;
+    .momtera-badge-tag {
+      display: inline-flex;
       align-items: center;
-      gap: 0.85rem;
-      transition: background 0.3s ease;
-    }
-    .trust-point-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: rgba(232, 44, 109, 0.2);
+      gap: 0.4rem;
+      background: rgba(232, 44, 109, 0.15);
       color: #FFB3C6;
+      border: 1px solid rgba(232, 44, 109, 0.3);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .momtera-main-title {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #FFFFFF;
+      margin-bottom: 0.65rem;
+    }
+
+    .momtera-main-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(250, 247, 244, 0.85);
+      max-width: 330px;
+      margin: 0 auto;
+    }
+
+    /* Stage Teater Kinetik Tangan Momtera */
+    .momtera-kinetic-theater {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      margin: 1.5rem 0 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      overflow: hidden;
     }
-    .trust-point-title {
-      font-size: 0.88rem;
+
+    /* Ambient Spotlight Glow di Balik Produk */
+    .momtera-ambient-glow {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 44, 109, 0.28) 0%, rgba(20, 14, 22, 0) 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Aktor Tangan Memegang Botol Momtera (Meluncur Naik dari Bawah Kanan) */
+    .momtera-hand-actor {
+      position: absolute;
+      right: -25px;
+      bottom: -60px;
+      width: 285px;
+      height: auto;
+      z-index: 4;
+      pointer-events: none;
+      will-change: transform, opacity;
+      transform: translateY(100px) rotate(8deg);
+      opacity: 0;
+    }
+
+    /* Floating Formula Badges (Kartu Melayang ala Gambar 4) */
+    .momtera-float-badge {
+      position: absolute;
+      z-index: 5;
+      padding: 0.45rem 0.85rem;
+      border-radius: 14px;
+      font-size: 0.72rem;
       font-weight: 700;
-      color: #FFFFFF;
-      margin-bottom: 0.15rem;
+      letter-spacing: 0.03em;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      will-change: transform, opacity;
+      opacity: 0;
+      transform: scale(0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
     }
-    .trust-point-sub {
-      font-size: 0.78rem;
-      color: rgba(250, 247, 244, 0.75);
-      line-height: 1.4;
+
+    .badge-float-1 {
+      top: 18%;
+      left: 10px;
+      background: #FDFBF7;
+      color: #121E36;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transform: rotate(-6deg);
+    }
+
+    .badge-float-2 {
+      top: 42%;
+      left: 6px;
+      background: #EBF8F4;
+      color: #13382E;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      transform: rotate(4deg);
+    }
+
+    .badge-float-3 {
+      top: 10%;
+      right: 20px;
+      background: #FDF0F4;
+      color: var(--color-accent);
+      border: 1px solid rgba(232, 44, 109, 0.3);
+      transform: rotate(5deg);
+    }
+
+    .badge-float-4 {
+      bottom: 22%;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #FAF7F4;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transform: rotate(-3deg);
+    }
+
+    /* CTA Tombol Shopee Official */
+    .btn-momtera-shopee {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: #EE4D2D;
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(238, 77, 45, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.25s ease;
+      position: relative;
+      z-index: 10;
+      margin-top: 1rem;
+    }
+    .btn-momtera-shopee:active {
+      transform: scale(0.98);
     }
 
     /* Sticky Bottom Thumb Bar */
@@ -1032,46 +1351,158 @@
         </div>
       </div>
 
-      <!-- 3 Pilar Kepercayaan -->
-      <div class="partnership-points-grid">
-        <div class="trust-point-card">
-          <div class="trust-point-icon">
-            <i data-lucide="smile" style="width: 20px; height: 20px;"></i>
-          </div>
-          <div>
-            <div class="trust-point-title">Komunikasi Ramah & Terbuka</div>
-            <div class="trust-point-sub">Diskusi santai tanpa stigma, siap mendengar kekhawatiran bunda.</div>
-          </div>
-        </div>
+    </section>
 
-        <div class="trust-point-card">
-          <div class="trust-point-icon">
-            <i data-lucide="badge-check" style="width: 20px; height: 20px;"></i>
-          </div>
-          <div>
-            <div class="trust-point-title">Lisensi SIPB Resmi Kemenkes</div>
-            <div class="trust-point-sub">Standar sterilisasi klinis, obat resmi, dan jejaring rujukan terintegrasi.</div>
-          </div>
+    <!-- ========================================================================
+         SECTION 4: BUILT FOR YOU (PEPPERMINT STACKED DECK CARDS)
+         ======================================================================== -->
+    <section class="built-section-stage" id="built-for-you">
+      <div class="built-header-wrap">
+        <div class="built-eyebrow-pill">
+          <i data-lucide="sparkles" style="width: 13px; height: 13px; color: var(--color-accent);"></i>
+          <span>DEDIKASI KAMI</span>
         </div>
-
-        <div class="trust-point-card">
-          <div class="trust-point-icon">
-            <i data-lucide="users" style="width: 20px; height: 20px;"></i>
-          </div>
-          <div>
-            <div class="trust-point-title">Pendampingan Suami 24 Jam</div>
-            <div class="trust-point-sub">Ruang persalinan privat penuh ketenangan untuk momen keluarga.</div>
-          </div>
-        </div>
+        <h2 class="built-main-title">
+          Built for you <span class="built-sparkle-star">✦</span>
+        </h2>
+        <p class="built-subtitle">
+          Ruang aman & layanan kebidanan modern yang dipersonalisasi untuk setiap kenyamanan bunda.
+        </p>
       </div>
 
-      <!-- CTA WhatsApp Konsultasi Langsung -->
-      <div style="margin-top: 2rem;">
-        <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20bercerita%20dan%20konsultasi%20seputar%20kehamilan..." target="_blank" rel="noopener noreferrer" class="btn-hero-wa" style="text-align: center; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);">
-          <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
-          <span>Ceritakan Kekhawatiran Bunda</span>
-        </a>
+      <!-- Carousel Track Kartu Tumpuk (Swipe / Stack Deck) -->
+      <div class="built-deck-track" id="builtDeckTrack">
+        
+        <!-- KARTU 1: Gentle Birth 24 Jam -->
+        <article class="built-deck-card">
+          <img src="assets/hero.webp" alt="Persalinan Nyaman Bidan Afita" class="built-card-photo" style="object-position: center 20%;">
+          <div class="built-card-scrim"></div>
+          <div class="built-card-info">
+            <span class="built-card-badge">Siaga 24 Jam</span>
+            <h3 class="built-card-title">Gentle Birth & Persalinan</h3>
+            <p class="built-card-desc">Kamar bersalin privat berhawa sejuk dengan panduan napas minim trauma.</p>
+            <span class="built-card-cta">
+              <span>Pelajari Layanan</span>
+              <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- KARTU 2: USG 2D/4D HD -->
+        <article class="built-deck-card">
+          <img src="assets/avatar.webp" alt="Skrining USG Modern Bidan Afita" class="built-card-photo" style="object-position: center top;">
+          <div class="built-card-scrim"></div>
+          <div class="built-card-info">
+            <span class="built-card-badge">Teknologi Terkini</span>
+            <h3 class="built-card-title">Pemeriksaan USG 2D & 4D</h3>
+            <p class="built-card-desc">Visual wajah janin dan detak jantung yang jelas dengan penjelasan teliti.</p>
+            <span class="built-card-cta">
+              <span>Jadwalkan USG</span>
+              <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- KARTU 3: Sukses Promil -->
+        <article class="built-deck-card">
+          <img src="assets/tanganpegangprodukmomtera.jpeg" alt="Program Hamil & Nutrisi" class="built-card-photo" style="object-position: center 40%;">
+          <div class="built-card-scrim"></div>
+          <div class="built-card-info">
+            <span class="built-card-badge">Program Khusus</span>
+            <h3 class="built-card-title">Program Sukses Promil</h3>
+            <p class="built-card-desc">Evaluasi ovulasi, panduan nutrisi, dan pemantauan siklus bersama pasangan.</p>
+            <span class="built-card-cta">
+              <span>Konsultasi Promil</span>
+              <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- KARTU 4: Baby SPA & Stimulasi -->
+        <article class="built-deck-card">
+          <img src="assets/momtera.webp" alt="Perawatan Bayi & Momtera" class="built-card-photo" style="object-position: center;">
+          <div class="built-card-scrim"></div>
+          <div class="built-card-info">
+            <span class="built-card-badge">Tumbuh Kembang</span>
+            <h3 class="built-card-title">Baby SPA & Pijat Bayi</h3>
+            <p class="built-card-desc">Stimulasi motorik, relaksasi otot, dan perawatan laktasi lancar ASI.</p>
+            <span class="built-card-cta">
+              <span>Reservasi SPA</span>
+              <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+            </span>
+          </div>
+        </article>
+
       </div>
+
+      <!-- Swipe Hint -->
+      <div class="built-swipe-hint">
+        <i data-lucide="move-horizontal" style="width: 14px; height: 14px;"></i>
+        <span>Geser kartu ke samping untuk melihat program</span>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 5: MOMTERA PRODUCT REVEAL (GAMBAR 4 SCROLL KINETIC REVEAL)
+         ======================================================================== -->
+    <section class="momtera-reveal-stage" id="momtera-reveal">
+      
+      <!-- Pembatas Lengkung Organik dari Cream ke Gelap (Gambar 4 Style) -->
+      <div class="momtera-curve-divider">
+        <svg viewBox="0 0 412 48" preserveAspectRatio="none">
+          <path d="M0,0 Q206,48 412,0 L412,48 L0,48 Z" fill="#140E16" />
+        </svg>
+      </div>
+
+      <!-- Header Momtera -->
+      <div class="momtera-header-block">
+        <div class="momtera-badge-tag">
+          <i data-lucide="package" style="width: 13px; height: 13px;"></i>
+          <span>PRODUK RESMI AFITA GROUP</span>
+        </div>
+        <h2 class="momtera-main-title">
+          MOMTERA™ Massage Gel
+        </h2>
+        <p class="momtera-main-desc">
+          Formula pijat perineum untuk meningkatkan elastisitas jalan lahir agar persalinan minim robekan, serta memudarkan stretchmark secara aman.
+        </p>
+      </div>
+
+      <!-- Panggung Kinetik Tangan Momtera (Gambar 4 Style) -->
+      <div class="momtera-kinetic-theater">
+        <!-- Spotlight Glow -->
+        <div class="momtera-ambient-glow"></div>
+
+        <!-- Floating Formula Badges (Kartu Melayang ala Gambar 4) -->
+        <div class="momtera-float-badge badge-float-1">
+          <i data-lucide="droplet" style="width: 13px; height: 13px; color: var(--color-wa);"></i>
+          <span>Waterbased Gel</span>
+        </div>
+
+        <div class="momtera-float-badge badge-float-2">
+          <i data-lucide="sparkles" style="width: 13px; height: 13px; color: #10B981;"></i>
+          <span>Collagen & HA</span>
+        </div>
+
+        <div class="momtera-float-badge badge-float-3">
+          <i data-lucide="shield-check" style="width: 13px; height: 13px; color: var(--color-accent);"></i>
+          <span>Minim Robekan</span>
+        </div>
+
+        <div class="momtera-float-badge badge-float-4">
+          <i data-lucide="check" style="width: 13px; height: 13px; color: #FFB3C6;"></i>
+          <span>Aman Bumil & Busui</span>
+        </div>
+
+        <!-- Aktor Tangan Memegang Momtera (Meluncur Naik dari Bawah Kanan) -->
+        <img src="assets/hand-momtera-angled.webp" class="momtera-hand-actor" alt="Tangan Memegang Momtera Massage Gel">
+      </div>
+
+      <!-- CTA Shopee Official -->
+      <a href="https://shopee.co.id/momteraofficial" target="_blank" rel="noopener noreferrer" class="btn-momtera-shopee">
+        <i data-lucide="shopping-bag" style="width: 18px; height: 18px;"></i>
+        <span>Order di Shopee Official (Bisa COD)</span>
+      </a>
 
     </section>    <!-- ========================================================================
          SECTION 5: FOOTER (BRANDMARK IDENTITAS & LEGAL TRUST)
@@ -1224,6 +1655,100 @@
         duration: 0.35,
         ease: "back.out(1.6)"
       }, 1.05);
+
+    // ==========================================================================
+    // SEKSI BUILT FOR YOU: KARTU TUMPUK (STACKED DECK CAROUSEL EFEK KERTAS)
+    // ==========================================================================
+    const deckTrack = document.getElementById('builtDeckTrack');
+    const deckCards = gsap.utils.toArray('.built-deck-card');
+
+    if (deckTrack && deckCards.length > 0) {
+      // Efek geser bertumpuk dinamis saat pengguna swipe / scroll track horizontal
+      deckTrack.addEventListener('scroll', () => {
+        const scrollLeft = deckTrack.scrollLeft;
+        const cardWidth = 280 + 16; // width + gap
+
+        deckCards.forEach((card, index) => {
+          const cardOffset = index * cardWidth;
+          const diff = scrollLeft - cardOffset;
+
+          if (diff > 0) {
+            // Kartu yang sudah ditarik/dilewati akan menumpuk rapi di belakangnya (seperti Gambar 3)
+            const progress = Math.min(diff / cardWidth, 1);
+            const scale = 1 - progress * 0.08;
+            const xOffset = diff * 0.75;
+            const rot = -progress * 2.5;
+
+            gsap.set(card, {
+              scale: scale,
+              x: xOffset,
+              rotation: rot,
+              boxShadow: '0 8px 24px rgba(18, 30, 54, 0.18)',
+              zIndex: index,
+            });
+          } else {
+            // Kartu yang sedang aktif atau di depan
+            gsap.set(card, {
+              scale: 1,
+              x: 0,
+              rotation: 0,
+              boxShadow: '0 16px 36px rgba(18, 30, 54, 0.12)',
+              zIndex: index + 10,
+            });
+          }
+        });
+      }, { passive: true });
+    }
+
+    // ==========================================================================
+    // SEKSI MOMTERA: TANGAN MELUNCUR NAIK & BADGE MELAYANG (GAMBAR 4 REVEAL)
+    // ==========================================================================
+    const momteraTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#momtera-reveal",
+        start: "top 72%",
+        end: "center 48%",
+        scrub: 1.2,
+      }
+    });
+
+    momteraTimeline
+      // 1. Tangan pemegang produk meluncur naik dari pojok kanan bawah ke posisi tengah
+      .fromTo(".momtera-hand-actor", 
+        {
+          y: 180,
+          x: 70,
+          rotation: 12,
+          opacity: 0.2
+        },
+        {
+          y: 0,
+          x: 0,
+          rotation: 0,
+          opacity: 1,
+          ease: "power2.out",
+          duration: 1.2
+        },
+        0
+      )
+      // 2. Spotlight ambient mekar
+      .fromTo(".momtera-ambient-glow",
+        {
+          scale: 0.5,
+          opacity: 0
+        },
+        {
+          scale: 1.15,
+          opacity: 1,
+          duration: 1
+        },
+        0.2
+      )
+      // 3. Floating Badges mekar melayang satu per satu (seperti kartu/confetti di Gambar 4)
+      .to(".badge-float-1", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.4)
+      .to(".badge-float-2", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.55)
+      .to(".badge-float-3", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.7)
+      .to(".badge-float-4", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.85);
   </script>
 </body>
 </html>
