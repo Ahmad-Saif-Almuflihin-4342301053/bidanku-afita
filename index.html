@@ -1122,6 +1122,163 @@
       transform: scale(0.98);
     }
 
+    /* ==========================================================================
+       SECTION 6: FAQ ACCORDION (INTERAKTIF & HUMANIS)
+       ========================================================================== */
+    .faq-section-stage {
+      padding: 3.5rem 1.25rem 4rem;
+      background: var(--color-canvas);
+      position: relative;
+    }
+
+    .faq-header-wrap {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .faq-eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #FFFFFF;
+      color: var(--color-accent);
+      border: 1px solid var(--color-blush-border);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(232, 44, 109, 0.06);
+      margin-bottom: 0.65rem;
+    }
+
+    .faq-main-title {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      line-height: 1.22;
+      color: var(--color-heading);
+      margin-bottom: 0.65rem;
+      font-weight: 700;
+    }
+
+    .faq-main-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--color-body);
+      max-width: 330px;
+      margin: 0 auto;
+    }
+
+    /* List Accordion */
+    .faq-accordion-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      max-width: 100%;
+    }
+
+    .faq-item {
+      background: #FFFFFF;
+      border-radius: 18px;
+      border: 1px solid var(--color-border-subtle);
+      box-shadow: 0 4px 16px rgba(38, 22, 31, 0.03);
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .faq-item.active {
+      border-color: rgba(232, 44, 109, 0.3);
+      box-shadow: 0 8px 24px rgba(232, 44, 109, 0.08);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 1.15rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-heading);
+      line-height: 1.4;
+    }
+
+    .faq-icon-rotator {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-blush);
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s ease;
+    }
+    .faq-item.active .faq-icon-rotator {
+      transform: rotate(180deg);
+      background: var(--color-accent);
+      color: #FFFFFF;
+    }
+
+    .faq-answer-collapse {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .faq-item.active .faq-answer-collapse {
+      max-height: 200px;
+    }
+
+    .faq-answer-body {
+      padding: 0 1.25rem 1.25rem;
+      font-size: 0.88rem;
+      color: var(--color-body);
+      line-height: 1.65;
+      border-top: 1px dashed rgba(38, 22, 31, 0.06);
+      padding-top: 0.85rem;
+    }
+
+    /* Footer Hubungi Kami Card */
+    .faq-help-box {
+      margin-top: 2rem;
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 1.35rem 1.25rem;
+      border: 1px dashed var(--color-blush-border);
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(38, 22, 31, 0.03);
+    }
+    .faq-help-text {
+      font-size: 0.85rem;
+      color: var(--color-body);
+      margin-bottom: 0.85rem;
+    }
+    .faq-help-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      background: var(--color-blush);
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid var(--color-blush-border);
+      transition: all 0.2s ease;
+    }
+    .faq-help-btn:active {
+      transform: scale(0.97);
+    }
+
     /* Sticky Bottom Thumb Bar */
     .thumb-nav-bar {
       position: sticky;
@@ -1504,8 +1661,120 @@
         <span>Order di Shopee Official (Bisa COD)</span>
       </a>
 
-    </section>    <!-- ========================================================================
-         SECTION 5: FOOTER (BRANDMARK IDENTITAS & LEGAL TRUST)
+    </section>
+
+    <!-- ========================================================================
+         SECTION 6: FAQ ACCORDION (PERTANYAAN YANG SERING DITANYAKAN)
+         ======================================================================== -->
+    <section class="faq-section-stage" id="faq">
+      
+      <!-- Header Seksi -->
+      <div class="faq-header-wrap">
+        <div class="faq-eyebrow-pill">
+          <i data-lucide="help-circle" style="width: 13px; height: 13px; color: var(--color-accent);"></i>
+          <span>PUSAT INFORMASI & JAWABAN</span>
+        </div>
+        <h2 class="faq-main-title">
+          Pertanyaan yang Sering Bunda Tanyakan
+        </h2>
+        <p class="faq-main-desc">
+          Kumpulan jawaban penting seputar layanan konsultasi, jadwal USG, persalinan, hingga produk resmi Bidan Afita.
+        </p>
+      </div>
+
+      <!-- Daftar Accordion FAQ -->
+      <div class="faq-accordion-list">
+
+        <!-- FAQ Item 1 (Default Active) -->
+        <div class="faq-item active">
+          <button class="faq-trigger" type="button" aria-expanded="true">
+            <span>Haruskah membuat janji sebelum periksa USG?</span>
+            <div class="faq-icon-rotator">
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer-collapse" style="max-height: 200px;">
+            <div class="faq-answer-body">
+              Sangat disarankan untuk reservasi jadwal terlebih dahulu via WhatsApp agar bunda tidak perlu menunggu lama dan mendapatkan alokasi waktu konsultasi privat yang nyaman.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Apakah suami boleh mendampingi saat persalinan?</span>
+            <div class="faq-icon-rotator">
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer-collapse">
+            <div class="faq-answer-body">
+              Ya, tentu! Bidan Afita mendukung penuh filosofi <em>Gentle Birth</em>. Kamar bersalin kami berkonsep privat sehingga suami dan keluarga inti dapat mendampingi penuh untuk memberikan rasa hangat.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Kapan waktu paling optimal untuk USG 4D?</span>
+            <div class="faq-icon-rotator">
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer-collapse">
+            <div class="faq-answer-body">
+              Waktu terbaik untuk melihat visual wajah janin secara jelas adalah pada usia kehamilan 26 hingga 30 minggu, saat air ketuban masih melimpah dan posisi janin ideal.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Apakah Momtera Gel aman untuk bumil & busui?</span>
+            <div class="faq-icon-rotator">
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer-collapse">
+            <div class="faq-answer-body">
+              Sangat aman. Momtera diformulasikan khusus dengan bahan dasar air (<em>waterbased</em>), Collagen, dan Hyaluronic Acid tanpa bahan kimia keras untuk meningkatkan elastisitas perineum dan anti-stretchmark.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <button class="faq-trigger" type="button" aria-expanded="false">
+            <span>Di mana alamat klinik dan apakah buka 24 jam?</span>
+            <div class="faq-icon-rotator">
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer-collapse">
+            <div class="faq-answer-body">
+              Klinik berlokasi di Lowokwaru, Tawangrejeni, Kec. Turen, Kab. Malang. Layanan gawat darurat & persalinan siaga 24 jam penuh, sedangkan periksa rutin dibuka sesuai konfirmasi janji.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Kotak Bantuan Tambahan -->
+      <div class="faq-help-box">
+        <p class="faq-help-text">Masih memiliki pertanyaan lain yang belum terjawab?</p>
+        <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20tanya%20seputar%20layanan..." target="_blank" rel="noopener noreferrer" class="faq-help-btn">
+          <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i>
+          <span>Tanya Langsung ke Bidan Afita</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================
+         SECTION 7: FOOTER (BRANDMARK IDENTITAS & LEGAL TRUST)
          ======================================================================== -->
     <footer class="mobile-footer">
       <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
@@ -1749,6 +2018,39 @@
       .to(".badge-float-2", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.55)
       .to(".badge-float-3", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.7)
       .to(".badge-float-4", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0.85);
+
+    // ==========================================================================
+    // SEKSI FAQ: INTERAKSI ACCORDION TOGGLE HALUS
+    // ==========================================================================
+    const faqTriggers = document.querySelectorAll('.faq-trigger');
+
+    faqTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const currentItem = trigger.closest('.faq-item');
+        const currentCollapse = currentItem.querySelector('.faq-answer-collapse');
+        const isCurrentlyActive = currentItem.classList.contains('active');
+
+        // Tutup item faq lain yang sedang terbuka
+        document.querySelectorAll('.faq-item').forEach((item) => {
+          if (item !== currentItem) {
+            item.classList.remove('active');
+            item.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+            item.querySelector('.faq-answer-collapse').style.maxHeight = '0px';
+          }
+        });
+
+        // Toggle item yang sedang diklik
+        if (isCurrentlyActive) {
+          currentItem.classList.remove('active');
+          trigger.setAttribute('aria-expanded', 'false');
+          currentCollapse.style.maxHeight = '0px';
+        } else {
+          currentItem.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+          currentCollapse.style.maxHeight = currentCollapse.scrollHeight + 'px';
+        }
+      });
+    });
   </script>
 </body>
 </html>
