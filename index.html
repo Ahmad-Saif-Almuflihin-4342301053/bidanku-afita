@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Bidanku Afita — Pelayanan Kebidanan & USG Modern | Turen, Malang</title>
+
+  <!-- Core SEO & Identity -->
+  <meta name="description" content="Praktik Mandiri Bidan Afita, Amd.Keb — Pelayanan kehamilan, USG 2D/4D, persalinan ramah ibu 24 jam, dan perawatan laktasi dengan pendekatan modern, tenang, dan tanpa rasa takut di Turen, Kabupaten Malang.">
+  <meta name="theme-color" content="#26161F">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/favicon.png">
+
+  <!-- ==========================================================================
+       TYPOGRAPHY SPECS (KOMBINASI 3: CALM, SOFT & PROFESSIONAL)
+       - Heading: Lora (Serif kontemporer, lekukan kaligrafi halus, soothing & keibuan)
+       - Body / Paragraf: Mulish & Lato (Proporsi humanis bersih, seimbang, tenang)
+       - Signature Akses Singkat: Alex Brush (Khusus tanda tangan di About Me)
+       - Brandmark Tech: Plus Jakarta Sans 800 (Aksen modern identitas Peppermint)
+       ========================================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- External Smooth Scroll & Animation Engines (Lenis + GSAP + ScrollTrigger) -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ==========================================================================
+       1. COLOR SYSTEM & DESIGN TOKENS (60 : 30 : 10 FORMULA)
+       ========================================================================== */
+    :root {
+      /* 60% DOMINANT BASE (Canvas Alabaster & Warm Linen) */
+      --color-canvas: #FAF7F4;
+      --color-card-bg: #FFFFFF;
+      --color-card-alt: #FDF9F7;
+
+      /* 30% SECONDARY CONTRAST & STRUCTURE (Deep Plum Charcoal & Petal Blush) */
+      --color-heading: #26161F;
+      --color-body: #57444F;
+      --color-muted: #85707C;
+      --color-blush: #FCEEF1;
+      --color-blush-border: rgba(232, 44, 109, 0.15);
+      --color-border-subtle: rgba(38, 22, 31, 0.08);
+
+      /* 10% ACCENT POP & CONVERSION (Rose Fuchsia & WhatsApp Green) */
+      --color-accent: #E82C6D;
+      --color-accent-hover: #D11C5B;
+      --color-accent-glow: rgba(232, 44, 109, 0.25);
+      --color-wa: #25D366;
+      --color-wa-hover: #1EBE5D;
+
+      /* Typography Spec */
+      --font-heading: 'Lora', Georgia, serif;
+      --font-body: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-signature: 'Alex Brush', cursive;
+      --font-brand: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Outer Stage (Desktop Studio Workspace) */
+    html, body {
+      background-color: #120B0F;
+      color: var(--color-body);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ==========================================================================
+       2. SAMSUNG S10 MOBILE-FIRST DEVICE CONTAINER (360px - 412px Viewport)
+       ========================================================================== */
+    .mobile-simulator-viewport {
+      width: 100%;
+      max-width: 412px; /* Standar Samsung Galaxy S10 / modern flagship */
+      min-height: 100vh;
+      margin: 0 auto;
+      background-color: var(--color-canvas);
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Headings */
+    h1, h2, h3, h4, .font-heading {
+      font-family: var(--font-heading);
+      color: var(--color-heading);
+      letter-spacing: -0.015em;
+    }
+
+    .font-signature {
+      font-family: var(--font-signature);
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION (BU AFITA PHOTOGRAPHY + 15% BLACK OVERLAY + EDITORIAL UI)
+       ========================================================================== */
+    .hero-mobile-stage {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 680px;
+      max-height: 860px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      color: #FFFFFF;
+    }
+
+    /* Background Foto Bu Afita */
+    .hero-bg-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%; /* Memastikan paras wajah Bu Afita tersorot sempurna */
+      z-index: 1;
+      transform: scale(1.02);
+      transition: transform 6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .hero-mobile-stage:hover .hero-bg-photo {
+      transform: scale(1.06);
+    }
+
+    /* Layer 1: Lapisan Hitam Transparan 15% Sesuai Request User */
+    .hero-overlay-dim {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.15); /* TEPAT 15% opacity hitam */
+      z-index: 2;
+    }
+
+    /* Layer 2: Gradient Halus Atas & Bawah untuk Keterbacaan Teks */
+    .hero-overlay-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(18, 11, 15, 0.72) 0%,
+        rgba(18, 11, 15, 0.05) 28%,
+        rgba(18, 11, 15, 0.08) 55%,
+        rgba(18, 11, 15, 0.88) 85%,
+        rgba(18, 11, 15, 0.98) 100%
+      );
+      z-index: 3;
+    }
+
+    /* Bingkai Editorial Tipis (Aksen Frame Kamera / Referensi Gambar) */
+    .hero-corner-border {
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: 4;
+    }
+    .hero-corner-border::before {
+      content: "";
+      position: absolute;
+      top: -2px; left: -2px;
+      width: 16px; height: 16px;
+      border-top: 2px solid var(--color-accent);
+      border-left: 2px solid var(--color-accent);
+      border-top-left-radius: 6px;
+    }
+    .hero-corner-border::after {
+      content: "";
+      position: absolute;
+      bottom: -2px; right: -2px;
+      width: 16px; height: 16px;
+      border-bottom: 2px solid var(--color-accent);
+      border-right: 2px solid var(--color-accent);
+      border-bottom-right-radius: 6px;
+    }
+
+    /* Konten Header Atas (Status Bidan & Rosette Logo Mini) */
+    .hero-top-hud {
+      position: relative;
+      z-index: 10;
+      padding: 1.6rem 1.4rem 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+    .hero-pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--color-wa);
+      box-shadow: 0 0 10px var(--color-wa);
+      animation: pulse-ring 2s infinite;
+    }
+    @keyframes pulse-ring {
+      0% { opacity: 0.6; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.15); }
+      100% { opacity: 0.6; transform: scale(0.9); }
+    }
+
+    /* Pinwheel Logo Rosette Minimalist */
+    .hero-logo-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(232, 44, 109, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(232, 44, 109, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .hero-rosette-spin {
+      width: 20px;
+      height: 20px;
+      animation: spin-soft 26s linear infinite;
+    }
+    @keyframes spin-soft {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Konten Teks Bawah Hero */
+    .hero-bottom-content {
+      position: relative;
+      z-index: 10;
+      padding: 1.5rem 1.4rem 2.2rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.82);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .hero-main-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 8.5vw, 2.55rem);
+      line-height: 1.18;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 0.85rem;
+      text-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    }
+    .hero-main-title em {
+      font-style: italic;
+      color: #FFB3C6;
+      font-weight: 400;
+    }
+
+    .hero-lead-text {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1.4rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    /* CTA Tombol Hero */
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .btn-hero-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: var(--color-wa);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.25s ease;
+    }
+    .btn-hero-wa:active {
+      transform: scale(0.98);
+    }
+
+    .btn-hero-sub {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    /* ==========================================================================
+       4. SECTION SECTIONS (MOBILE-FIRST CARD CONTENT)
+       ========================================================================== */
+    .mobile-section {
+      padding: 3rem 1.25rem;
+      position: relative;
+    }
+
+    .section-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--color-blush);
+      color: var(--color-accent);
+      border: 1px solid var(--color-blush-border);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Section About Bu Afita with Signature */
+    .about-card {
+      background: #FFFFFF;
+      border-radius: 24px;
+      padding: 1.85rem 1.5rem;
+      border: 1px solid var(--color-border-subtle);
+      box-shadow: 0 10px 30px rgba(38, 22, 31, 0.04);
+      margin-top: 1.25rem;
+    }
+
+    .signature-wrap {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px dashed var(--color-border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .signature-text {
+      font-family: var(--font-signature);
+      font-size: 2.2rem;
+      line-height: 0.9;
+      color: var(--color-heading);
+    }
+    .signature-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.35rem;
+    }
+
+    /* Service Cards (Mobile Stack) */
+    .service-card-m {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 1.5rem;
+      border: 1px solid var(--color-border-subtle);
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 18px rgba(38, 22, 31, 0.03);
+    }
+    .service-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--color-blush);
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    /* Momtera Product Section */
+    .momtera-card-m {
+      background: linear-gradient(180deg, #FDF0F3 0%, #FFFFFF 100%);
+      border-radius: 24px;
+      padding: 1.75rem 1.4rem;
+      border: 1px solid var(--color-blush-border);
+      box-shadow: 0 12px 30px rgba(232, 44, 109, 0.08);
+    }
+
+    /* Sticky Bottom Thumb Bar */
+    .thumb-nav-bar {
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--color-border-subtle);
+      padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+      z-index: 99;
+      display: flex;
+      gap: 0.6rem;
+      box-shadow: 0 -8px 24px rgba(38, 22, 31, 0.06);
+    }
+
+    /* Footer Mobile */
+    .mobile-footer {
+      background: var(--color-heading);
+      color: #FAF7F4;
+      padding: 2.5rem 1.25rem 5.5rem;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       CONTAINER: SAMSUNG GALAXY S10 MOBILE VIEWPORT LOCK (360px - 412px)
+       ========================================================================== -->
+  <main class="mobile-simulator-viewport">
+
+    <!-- ========================================================================
+         SECTION 1: HERO VIEWPORT (PHOTO BU AFITA + 15% BLACK OVERLAY + LORA)
+         ======================================================================== -->
+    <header class="hero-mobile-stage" id="hero">
+      
+      <!-- 1. Background Image Real Bu Afita -->
+      <img src="assets/hero.webp" alt="Bidan Afita, Amd.Keb tersenyum ramah mendampingi bunda" class="hero-bg-photo">
+
+      <!-- 2. Layer Hitam Transparan 15% (Eksak Sesuai Request User) -->
+      <div class="hero-overlay-dim"></div>
+
+      <!-- 3. Vignette Scrim Halus untuk Mempertahankan Kontras Teks -->
+      <div class="hero-overlay-scrim"></div>
+
+      <!-- 4. Framing Sudut Minimalis ala Referensi Editorial -->
+      <div class="hero-corner-border"></div>
+
+      <!-- 5. TOP HUD: Status Siaga + Peppermint-style Rosette Emblem -->
+      <div class="hero-top-hud">
+        <div class="hero-status-pill">
+          <span class="hero-pulse-dot"></span>
+          <span>Bidan Siaga 24 Jam</span>
+        </div>
+
+        <a href="#about" class="hero-logo-btn" aria-label="Profil Bidan Afita">
+          <!-- 8-Petal Pinwheel Rosette Symbol -->
+          <svg class="hero-rosette-spin" viewBox="-50 -50 100 100" fill="currentColor">
+            <g id="hero-petals">
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(45)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(90)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(135)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(180)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(225)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(270)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(315)" />
+            </g>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 6. BOTTOM CONTENT: Tipografi Lora & Mulish (Calm, Soft & Professional) -->
+      <div class="hero-bottom-content">
+        <div class="hero-eyebrow">
+          <i data-lucide="map-pin" style="width: 14px; height: 14px; color: var(--color-accent);"></i>
+          <span>Turen, Kab. Malang • SIPB Resmi</span>
+        </div>
+
+        <h1 class="hero-main-title">
+          Menyambut Buah Hati dengan <em>Tenang, Lembut,</em> & Penuh Cinta.
+        </h1>
+
+        <p class="hero-lead-text">
+          Ruang konsultasi kehamilan, USG modern, & persalinan ramah ibu. Mengobrol santai seperti dengan sahabat, tanpa rasa takut dihakimi.
+        </p>
+
+        <!-- CTA Hero -->
+        <div class="hero-cta-group">
+          <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20jadwalkan%20periksa%20kehamilan/USG..." target="_blank" class="btn-hero-wa">
+            <i data-lucide="message-circle" style="width: 19px; height: 19px;"></i>
+            <span>Konsultasi WA (+62 823-3076-4520)</span>
+          </a>
+          <a href="#about" class="btn-hero-sub">
+            <span>Kenali Sosok Bidan Afita</span>
+            <i data-lucide="arrow-down" style="width: 15px; height: 15px;"></i>
+          </a>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- ========================================================================
+         SECTION 2: ABOUT ME & SIGNATURE (TANDA TANGAN RESMI ALEX BRUSH)
+         ======================================================================== -->
+    <section class="mobile-section" id="about" style="background-color: var(--color-canvas);">
+      <span class="section-pill-tag">
+        <i data-lucide="heart" style="width: 12px; height: 12px;"></i>
+        Maternal Care & Gentle Birth
+      </span>
+      <h2 style="font-size: 1.75rem; line-height: 1.25; margin-bottom: 0.75rem;">
+        "Persalinan bukan momen yang menakutkan, melainkan ibadah terindah."
+      </h2>
+      <p style="color: var(--color-body); font-size: 0.95rem; line-height: 1.65;">
+        Bidan Afita, Amd.Keb mendedikasikan praktiknya di Tawangrejeni, Turen untuk menghadirkan suasana persalinan alami yang minim trauma, penuh kehangatan, serta didukung panduan medis resmi terpercaya.
+      </p>
+
+      <!-- About Card dengan Tanda Tangan Alex Brush Sesuai Spek -->
+      <div class="about-card">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; overflow: hidden; border: 2px solid var(--color-accent); flex-shrink: 0;">
+            <img src="assets/avatar.webp" alt="Avatar Bidan Afita" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+          </div>
+          <div>
+            <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0; line-height: 1.2;">Afita, Amd.Keb</h3>
+            <p style="font-size: 0.78rem; color: var(--color-muted); margin: 0;">Praktik Mandiri Bidan Berlisensi Resmi (SIPB)</p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.9rem; color: var(--color-body); line-height: 1.6; margin-bottom: 0.5rem;">
+          <em>"Bunda tidak harus menanggung kekhawatiran menjelang hari persalinan sendirian. Pintu klinik kami selalu terbuka untuk mendengar dan merawat dengan sepenuh hati."</em>
+        </p>
+
+        <!-- Signature Akses Singkat (HANYA DI ABOUT ME SESUAI ATURAN PENGGUNA) -->
+        <div class="signature-wrap">
+          <div>
+            <span class="signature-text">Bidan Afita</span>
+            <div class="signature-title">Bidan Praktik Mandiri • Turen</div>
+          </div>
+          <div style="text-align: right;">
+            <span style="font-size: 0.7rem; font-weight: 700; color: var(--color-accent); background: var(--color-blush); padding: 0.25rem 0.6rem; border-radius: 6px;">SIPB RESMI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 3: LAYANAN MEDIS UNGGULAN (KATALOG PRAKTIK MANDIRI)
+         ======================================================================== -->
+    <section class="mobile-section" id="layanan" style="background-color: #FFFFFF; border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle);">
+      <span class="section-pill-tag">
+        <i data-lucide="stethoscope" style="width: 12px; height: 12px;"></i>
+        Layanan Medis
+      </span>
+      <h2 style="font-size: 1.65rem; line-height: 1.25; margin-bottom: 1.5rem;">
+        Pendampingan Medis Sepenuh Hati
+      </h2>
+
+      <!-- Layanan 1: USG -->
+      <div class="service-card-m">
+        <div class="service-icon-box">
+          <i data-lucide="scan" style="width: 22px; height: 22px;"></i>
+        </div>
+        <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem;">Pemeriksaan USG 2D & 4D</h3>
+        <p style="font-size: 0.88rem; color: var(--color-body); line-height: 1.6; margin-bottom: 1rem;">
+          Skrining perkembangan janin, denyut jantung bayi, dan visual wajah 4D yang jelas dengan penjelasan teliti dan bersahabat.
+        </p>
+        <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20tanya%20jadwal%20USG..." target="_blank" style="color: var(--color-accent); font-weight: 700; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
+          <span>Jadwalkan USG</span>
+          <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+        </a>
+      </div>
+
+      <!-- Layanan 2: Persalinan 24 Jam -->
+      <div class="service-card-m" style="border: 1.5px solid var(--color-blush-border); background: var(--color-card-alt);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div class="service-icon-box" style="background: var(--color-accent); color: #fff;">
+            <i data-lucide="clock" style="width: 22px; height: 22px;"></i>
+          </div>
+          <span style="background: var(--color-accent); color: #fff; font-size: 0.68rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; text-transform: uppercase;">Siaga 24 Jam</span>
+        </div>
+        <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem;">Persalinan Nyaman (Gentle Birth)</h3>
+        <p style="font-size: 0.88rem; color: var(--color-body); line-height: 1.6; margin-bottom: 1rem;">
+          Kamar bersalin privat berhawa sejuk, suami boleh mendampingi penuh, panduan pernapasan minim robekan, dan ramah BPJS.
+        </p>
+        <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20konsultasi%20paket%20persalinan%2024%20jam..." target="_blank" style="color: var(--color-accent); font-weight: 700; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
+          <span>Konsultasi Persalinan</span>
+          <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+        </a>
+      </div>
+
+      <!-- Layanan 3: KB Medis & Imunisasi -->
+      <div class="service-card-m">
+        <div class="service-icon-box">
+          <i data-lucide="sparkles" style="width: 22px; height: 22px;"></i>
+        </div>
+        <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.4rem;">Pasang / Bongkar KB & Laktasi</h3>
+        <p style="font-size: 0.88rem; color: var(--color-body); line-height: 1.6; margin-bottom: 1rem;">
+          Spesialis IUD/Implan higienis, perawatan payudara bengkak, pijat laktasi lancar ASI, dan imunisasi berkala bayi.
+        </p>
+        <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20konsultasi%20KB/Pijat%20Laktasi..." target="_blank" style="color: var(--color-accent); font-weight: 700; font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
+          <span>Tanya Info KB & Laktasi</span>
+          <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 4: MOMTERA GEL (PRODUK RESMI AFITA GROUP)
+         ======================================================================== -->
+    <section class="mobile-section" id="momtera" style="background-color: var(--color-canvas);">
+      <div class="momtera-card-m">
+        <span class="section-pill-tag" style="background: #FFFFFF;">
+          <i data-lucide="package" style="width: 12px; height: 12px;"></i>
+          Produk Resmi Bidan Afita
+        </span>
+        <h2 style="font-size: 1.5rem; line-height: 1.25; margin-bottom: 0.75rem;">
+          MOMTERA™ Massage Gel
+        </h2>
+        <p style="font-size: 0.88rem; color: var(--color-body); line-height: 1.6; margin-bottom: 1.25rem;">
+          Formula pijat perineum untuk meningkatkan elastisitas jalan lahir agar persalinan minim robekan, serta memudarkan stretchmark secara aman.
+        </p>
+
+        <div style="border-radius: 16px; overflow: hidden; margin-bottom: 1.25rem; border: 1px solid rgba(232, 44, 109, 0.2);">
+          <img src="assets/momtera.webp" alt="Produk Momtera Gel Bidan Afita" style="width: 100%; height: auto; display: block;">
+        </div>
+
+        <a href="https://shopee.co.id/momteraofficial" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: #EE4D2D; color: #fff; font-weight: 700; font-size: 0.88rem; padding: 0.8rem 1rem; border-radius: 999px; text-decoration: none; box-shadow: 0 4px 14px rgba(238, 77, 45, 0.3);">
+          <i data-lucide="shopping-bag" style="width: 17px; height: 17px;"></i>
+          <span>Order di Shopee Official (Bisa COD)</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECTION 5: FOOTER (BRANDMARK IDENTITAS & LEGAL TRUST)
+         ======================================================================== -->
+    <footer class="mobile-footer">
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+        <div style="width: 38px; height: 38px; border-radius: 10px; background: var(--color-accent); display: flex; align-items: center; justify-content: center; color: #fff;">
+          <svg style="width: 20px; height: 20px; animation: spin-soft 26s linear infinite;" viewBox="-50 -50 100 100" fill="currentColor">
+            <g>
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(45)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(90)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(135)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(180)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(225)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(270)" />
+              <path d="M -5,-12 C -6,-28 1,-44 14,-46 C 24,-47 30,-36 24,-24 C 18,-14 9,-6 0,0 C -2,-4 -4,-8 -5,-12 Z" transform="rotate(315)" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <span style="font-family: var(--font-brand); font-size: 1.35rem; font-weight: 800; letter-spacing: -0.04em; color: #FFFFFF; display: block; line-height: 1;">
+            bidanku<span style="color: var(--color-accent);">afita</span>
+          </span>
+          <span style="font-size: 0.72rem; color: #A6929E; letter-spacing: 0.05em; text-transform: uppercase;">Afita Group • Turen Malang</span>
+        </div>
+      </div>
+
+      <p style="color: #A6929E; line-height: 1.6; margin-bottom: 1rem;">
+        Praktik Mandiri Bidan Afita, Amd.Keb.<br>
+        Lowokwaru, Tawangrejeni, Kec. Turen, Kab. Malang, Jawa Timur 65175.
+      </p>
+
+      <p style="color: #7D6B75; font-size: 0.75rem; margin: 0;">
+        &copy; 2026 Bidanku Afita. Seluruh Hak Cipta Dilindungi.
+      </p>
+    </footer>
+
+    <!-- ========================================================================
+         STICKY THUMB NAVIGATION BAR (NAVIGASI 1 JEMPOL PENGGUNA HP)
+         ======================================================================== -->
+    <div class="thumb-nav-bar">
+      <a href="https://wa.me/6282330764520?text=Halo%20Bidan%20Afita,%20saya%20ingin%20konsultasi..." target="_blank" class="btn-hero-wa" style="flex: 1; padding: 0.75rem 1rem; font-size: 0.88rem;">
+        <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+        <span>Chat WA Bidan</span>
+      </a>
+      <a href="https://shopee.co.id/momteraofficial" target="_blank" class="btn-hero-sub" style="flex: 1; padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--color-heading); background: var(--color-blush); border-color: var(--color-blush-border); text-align: center;">
+        <i data-lucide="shopping-bag" style="width: 16px; height: 16px; color: var(--color-accent);"></i>
+        <span>Beli Momtera</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ==========================================================================
+       JAVASCRIPT INITIALIZATION
+       ========================================================================== -->
+  <script>
+    // Inisialisasi ikon Lucide
+    lucide.createIcons();
+
+    // Inisialisasi Lenis Smooth Scroll untuk Mobile
+    const lenis = new Lenis({
+      duration: 1.0,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      touchMultiplier: 1.4,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  </script>
+</body>
+</html>
