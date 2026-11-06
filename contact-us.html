@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Mon Jul 08 2024 16:13:25 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="6662e45aedcfe2c52fac7518" data-wf-site="6661acf0edb53d45a1b7197f">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Contact Us | Peppermint</title>
+  <meta
+    content="Tell us a bit about yourself and your business dreams and we’ll follow up about how peppermint can help you achieve them."
+    name="description" />
+  <meta content="Contact Us | Peppermint" property="og:title" />
+  <meta
+    content="Tell us a bit about yourself and your business dreams and we’ll follow up about how peppermint can help you achieve them."
+    property="og:description" />
+  <meta
+    content="images/logo-afita.webp"
+    property="og:image" />
+  <meta content="Contact Us | Peppermint" property="twitter:title" />
+  <meta
+    content="Tell us a bit about yourself and your business dreams and we’ll follow up about how Peppermint can help you achieve them."
+    property="twitter:description" />
+  <meta
+    content="images/logo-afita.webp"
+    property="twitter:image" />
+  <meta property="og:type" content="website" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="Webflow" name="generator" />
+  <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+  <link href="css/webflow.css" rel="stylesheet" type="text/css" />
+  <link href="css/peppermint-check.webflow.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript">
+    !(function (o, c) {
+      var n = c.documentElement,
+        t = " w-mod-";
+      (n.className += t + "js"),
+        ("ontouchstart" in o ||
+          (o.DocumentTouch && c instanceof DocumentTouch)) &&
+        (n.className += t + "touch");
+    })(window, document);
+  </script>
+  <link href="images/afita-favicon.png?v=5" rel="icon" type="image/png" /><link href="images/favicon.svg?v=5" rel="shortcut icon" type="image/svg+xml" />
+  <link href="images/afita-favicon.png?v=5" rel="apple-touch-icon" />
+  <style>
+    [data-header-anim],
+    [data-hero-anim],
+    [data-subtext-anim] {
+      visibility: hidden;
+      opacity: 0;
+      font-kerning: none;
+      -webkit-text-rendering: optimizeSpeed;
+      text-rendering: optimizeSpeed;
+      -webkit-transform: translateZ(0);
+    }
+
+    #shape {
+      visibility: hidden;
+    }
+
+    html.lenis,
+    html.lenis body {
+      height: auto;
+    }
+  </style>
+  <style>
+    [data-hero-anim] {
+      visibility: hidden;
+      opacity: 0;
+      font-kerning: none;
+      -webkit-text-rendering: optimizeSpeed;
+      text-rendering: optimizeSpeed;
+      -webkit-transform: translateZ(0);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="global-embed w-embed">
+    <style>
+      /** Links **/
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /** Form elements **/
+      textarea,
+      input.text,
+      input[type="text"],
+      input[type="button"],
+      input[type="submit"],
+      .input-checkbox,
+      .w-input,
+      .w-select {
+        -webkit-appearance: none;
+        resize: vertical;
+      }
+
+      .cc-no-resize,
+      .cc-no-border,
+      .cc-has-cta,
+      .cc-has-counter {
+        resize: none;
+      }
+
+      .w-select {
+        background-position: center right 2px;
+      }
+
+      input[type="email"] {
+        text-transform: lowercase;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      /** Images **/
+      img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+      }
+
+      #scrollbar {
+        scrollbar-width: none;
+        /* firefox */
+        -ms-overflow-style: none;
+        /* IE 10+ */
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+        /* Safari and Chrome */
+      }
+
+      /** Buttons **/
+      .c-button {
+        display: inline-flex;
+      }
+
+      /** Popups **/
+      .c-popup.cc-hide {
+        visibility: hidden;
+      }
+
+      .c-popup {
+        visibility: visible;
+      }
+
+      body {
+        background: var(--metal);
+      }
+
+      body:has(.page-wrapper.cc-contact) {
+        background: var(--cream);
+      }
+
+      .footer-text {
+        font-size: clamp(200px, 19vw, 360px);
+      }
+
+      .usecase-slide.swiper-slide.swiper-slide-active {
+        opacity: 1 !important;
+      }
+
+      .swiper-pagination-bullet::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 0%;
+      }
+
+      .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+        animation-name: countingBar;
+        animation-duration: 2.5s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        background: #735af4;
+      }
+
+      @keyframes countingBar {
+        0% {
+          width: 0%;
+        }
+
+        100% {
+          width: 100%;
+        }
+      }
+
+      .opaque-line {
+        position: relative;
+        padding-bottom: 20px;
+      }
+
+      .more-card:hover .more-card_image {
+        transform: scale(0.98);
+      }
+
+      .more-card:hover {
+        background-position: 50% -2%;
+      }
+
+      .more-card:hover .more-card_details {
+        transform: scale(1.01);
+      }
+
+      .usecases-illustration_container {
+        top: clamp(20px, 5vw, 100px);
+      }
+
+      .c-button:hover .btn-overlay {
+        width: 100%;
+      }
+
+      .c-button:hover .btn-illustration {
+        transform: translateX(0);
+        right: 10px;
+      }
+
+      .heading-h1 {
+        font-size: clamp(90px, 9vw, 133px);
+        line-height: clamp(90px, 8vw, 113px);
+      }
+
+      .hero-hand_illustration {
+        top: clamp(585px, 62vh, 650px);
+      }
+
+      @media screen and (max-width: 991px) {
+        .footer-text {
+          font-size: clamp(100px, 20vw, 220px);
+        }
+
+        .opaque-line {
+          padding-bottom: 15px;
+        }
+
+        .heading-h1 {
+          font-size: 90px;
+          line-height: 0.9;
+        }
+
+        .hero-hand_illustration {
+          top: 550px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .opaque-line {
+          padding-bottom: 0;
+        }
+
+        .service-illustration_line {
+          margin-top: 0;
+        }
+
+        .header-parent {
+          padding-bottom: 0;
+          margin-top: 0;
+        }
+
+        .hero-line,
+        .header-line {
+          padding-bottom: 10px;
+        }
+
+        .heading-h1 {
+          font-size: 60px;
+        }
+
+        .hero-hand_illustration {
+          top: 550px;
+        }
+
+        .usecase-slide:last-child {
+          margin-right: 0px;
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 567px) {
+        .footer-text {
+          font-size: clamp(64px, 18.5vw, 190px);
+        }
+
+        .heading-h1 {
+          font-size: 50px;
+        }
+
+        .hero-hand_illustration {
+          top: 545px;
+        }
+      }
+    </style>
+  </div>
+  <div class="page-wrapper cc-contact">
+    <main class="c-main">
+      <section class="c-hero cc-contact">
+        <div class="hero-shape">
+          <div class="hero-shape_inner w-embed">
+            <svg viewbox="0 0 1930 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect transform="translate(0, 0)" id="circle" width="1500" height="1" fill="#735AF4"></rect>
+              <path
+                d="M249.299 600.01C127.192 537.216 191.046 545.969 48.2139 488.883C-28.1786 458.352 8.37414 358.813 18.1006 277.122L22.8822 236.962C37.3325 115.597 140.25 24.2068 262.472 24.2068H836.873L1648.89 0.420955C1788.24 -3.66096 1905.13 107.099 1904.1 246.507C1903.88 276.541 1903.31 298.063 1902.24 303.545C1897.75 326.38 1998.02 386.89 1842.86 429.895C1687.71 472.899 1636.73 545.969 1620.49 545.969C1604.25 545.969 1419.97 754.521 1344.35 760.23C1268.73 765.938 1160.07 805.137 1105.17 822.263C1050.28 839.389 1071.57 856.514 1034.04 907.891C996.509 959.268 1017.23 939.098 966.823 939.098H895.686C872.385 939.098 846.769 918.293 836.873 907.891C800.465 877.446 724.287 814.271 710.844 805.137C694.041 793.72 606.101 751.096 543.366 725.598C480.632 700.1 501.357 714.181 249.299 600.01Z"
+                fill="#735AF4"></path>
+            </svg>
+          </div>
+        </div>
+        <a data-hero-fade="" href="index.html" class="company-logo w-inline-block"><img src="images/afita-icon-pure.webp" alt="" class="company-logo_icon"><span class="company-logo_text">bidanku <b>afita</b></span></a>
+        <div class="hero-inner cc-contact">
+          <h1 data-hero-anim="" class="contact-header">
+            Build with peppermint
+          </h1>
+          <p data-subtext-anim="" class="hero-subtext cc-contact">
+             Tell us a bit about yourself and your business dreams and we’ll
+            follow up about how Peppermint can help you achieve them.
+          </p>
+        </div>
+        <div class="hero-swirl_container cc-contact">
+          <div class="hero-swirl cc-one w-embed">
+            <svg viewbox="0 0 313 296" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_377_1050" style="mask-type: alpha" maskunits="userSpaceOnUse" x="10" y="112" width="301"
+                height="84">
+                <path
+                  d="M14.3873 195.899C21.1795 194.042 27.9915 192.311 34.8033 190.62C78.9758 179.71 123.563 170.425 168.245 161.885C169.598 161.65 173.507 160.881 174.682 160.65L175.976 160.328L178.554 159.686C219.333 149.449 260.126 138.082 299.398 123.031C302.916 121.646 306.757 120.118 310.81 118.441L309.519 112.885C306.901 113.949 304.456 114.915 302.226 115.782C271.443 127.54 239.272 136.39 207.208 143.962C196.197 146.519 183.883 149.237 172.876 151.5C167.567 152.354 161.069 153.185 156.028 153.955C107.552 160.75 58.9613 166.958 10.1292 170.525L14.3873 195.899Z"
+                  fill="#735BF6"></path>
+              </mask>
+              <g mask="url(#mask0_377_1050)">
+                <path class="purple-path path" d="M5.45215 185.5C77.9521 175.333 249.852 143.3 313.452 114.5"
+                  stroke="#735BF6" stroke-width="40"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="hero-swirl cc-four w-embed">
+            <svg viewbox="0 0 525 334" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_377_1029" style="mask-type: alpha" maskunits="userSpaceOnUse" x="76" y="6" width="343"
+                height="246">
+                <path
+                  d="M76.4407 17.0018C105.469 26.24 141.273 45.7906 181.895 84.5117C212.692 113.871 257.33 190.644 322.848 251.254C319.774 235.967 343.217 240.991 343.762 241.107C311.866 219.59 279.409 188.743 249.785 144.692C254.38 150.939 303.198 214.376 409.586 231.431C397.696 204.832 410.52 186.727 418.279 178.91C375.79 187.372 326.814 184.926 283.813 151.658C207.156 92.3452 156.75 27.5208 84.0924 6.77197C80.9442 7.76355 74.3006 10.6391 76.4407 17.0018Z"
+                  fill="#A1E8DF"></path>
+              </mask>
+              <g mask="url(#mask0_377_1029)">
+                <path class="path broken-path-four"
+                  d="M72.9521 8C99.7855 17.3333 175.452 56.1 239.452 128.5C303.452 200.9 405.952 208 434.452 203M232.452 120.5C244.952 149.833 297.952 225.5 341.952 254"
+                  stroke="#A1E8DF" stroke-width="55"></path>
+              </g>
+              <mask id="mask1_377_1029" style="mask-type: alpha" maskunits="userSpaceOnUse" x="322" y="240" width="103"
+                height="78">
+                <path
+                  d="M322.847 251.254C352.372 278.589 386.135 302.626 424.79 317.558C424.327 316.194 423.823 314.789 423.286 313.36C417.923 299.089 416.469 286.951 418.072 276.977C394.861 269.739 369.501 258.459 343.77 241.107H343.762C343.216 240.991 319.774 235.967 322.847 251.254Z"
+                  fill="#86CEEC"></path>
+              </mask>
+              <g mask="url(#mask1_377_1029)">
+                <path class="broken-path-three path" d="M312.952 231C329.952 245.5 400.252 293.9 433.452 303.5"
+                  stroke="#86CEEC" stroke-width="50"></path>
+              </g>
+              <mask id="mask2_377_1029" style="mask-type: alpha" maskunits="userSpaceOnUse" x="430" y="280" width="95"
+                height="54">
+                <path
+                  d="M434.574 317.078C434.574 317.078 435.293 318.797 436.226 321.664H436.235C463.272 330.613 492.606 335.051 524.452 333.142V290.248C524.452 290.248 523.37 289.314 521.395 287.794C511.182 289.149 476.369 292.347 431.442 280.786C427.187 296.131 434.574 317.078 434.574 317.078Z"
+                  fill="#86CEEC"></path>
+              </mask>
+              <g mask="url(#mask2_377_1029)">
+                <path class="broken-path-one path" d="M417.452 297.5C430.952 302.167 499.452 314.6 541.452 313"
+                  stroke="#86CEEC" stroke-width="50"></path>
+              </g>
+              <mask id="mask3_377_1029" style="mask-type: alpha" maskunits="userSpaceOnUse" x="417" y="276" width="20"
+                height="46">
+                <path
+                  d="M423.286 313.36C423.824 314.789 424.328 316.194 424.79 317.557C428.558 319.02 432.368 320.392 436.227 321.664C435.293 318.797 434.574 317.078 434.574 317.078C434.574 317.078 427.187 296.131 431.442 280.786C427.079 279.663 422.617 278.398 418.072 276.977C416.469 286.951 417.924 299.089 423.286 313.36Z"
+                  fill="#68DACB"></path>
+              </mask>
+              <g mask="url(#mask3_377_1029)">
+                <path class="broken-path-two path" d="M411.952 296.5L441.452 303.5" stroke="#68DACB" stroke-width="50">
+                </path>
+              </g>
+              <mask id="mask4_377_1029" style="mask-type: alpha" maskunits="userSpaceOnUse" x="0" y="0" width="85"
+                height="18">
+                <path
+                  d="M0.452095 2.83836L11.3595 6.28409L17.4907 9.13488L19.2343 10.2504C32.8933 8.77957 52.3282 9.3332 76.4401 17.0014C74.2999 10.6388 80.9435 7.7632 84.0918 6.77162C59.418 -0.268586 32.1661 -2.22696 0.452095 2.83836Z"
+                  fill="#A1E8DF"></path>
+              </mask>
+              <g mask="url(#mask4_377_1029)">
+                <path class="broken-path-five path" d="M-0.0478516 7.5C11.1188 4.66666 58.7521 3.1 85.9521 13.5"
+                  stroke="#A1E8DF" stroke-width="40"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="hero-swirl cc-two w-embed">
+            <svg viewbox="0 0 855 774" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_377_1052" style="mask-type: alpha" maskunits="userSpaceOnUse" x="111" y="1" width="612"
+                height="694">
+                <path
+                  d="M112.905 694.938C156.127 689.613 199.153 681.551 240.474 667.606C287.785 651.347 336.868 627.077 367.903 586.553C375.661 576.193 382.169 564.223 385.498 551.559C405.889 546.948 425.982 539.825 442.069 533.486C475.811 519.892 541.702 487.15 554.22 451.492C560.366 432.76 547.361 420.348 531.195 413.821C528.738 412.772 525.935 411.82 523.398 410.973C516.162 408.529 508.998 405.45 502.678 401.495C494.554 396.334 487.423 389.643 485.357 380.351C482.291 364.285 495.365 350.01 506.782 339.967C533.495 317.397 566.573 304.246 598.603 291.04C611.663 285.701 625.036 281.094 638.651 277.356C645.551 275.339 652.345 273.791 659.278 271.579C673.234 267.035 686.463 259.467 696.615 248.706C748.02 193.823 712.501 83.0118 687.604 21.6777C684.839 15.025 682.04 8.44694 678.944 1.9184L670 6.37036C699.164 65.9483 743.564 188.299 691.665 244.003C679.843 256.632 663.795 264 647.116 268.018C640.678 269.654 623.029 274.898 616.273 276.829C588.631 284.342 561.383 293.95 536.167 307.792C514.675 319.665 489.882 335.716 478.891 358.589C469.039 379.813 478.813 398.168 497.657 409.554C505.668 414.492 514.149 417.85 522.924 420.669C524.525 421.214 526.098 421.795 527.64 422.426C539.028 427.065 550.238 434.99 545.661 448.747C537.12 473.038 499.459 496.334 477.387 508.737C448.868 524.091 418.549 537.369 386.923 544.948C388.103 537.977 388.252 530.846 387.06 523.706C383.369 500.843 367.95 488.705 344.919 494.094C328.394 498.017 307.278 512.364 304.46 530.14C302.623 543.665 314.951 551.619 326.533 554.39C327.138 554.526 327.75 554.656 328.366 554.776L327.644 548.757L327.648 548.753C324.575 547.921 321.597 546.79 318.763 545.275C309.055 539.879 307.886 531.361 313.747 522.28C321.152 511.272 333.543 503.605 346.401 500.651C359.922 497.67 371.866 501.837 376.722 515.458C380.065 524.681 380.217 534.509 378.222 543.978C378.01 545 377.77 546.02 377.499 547.026C376.922 549.256 376.227 551.452 375.437 553.611L375.433 553.614C375.404 553.697 375.38 553.762 375.357 553.82C375.309 553.943 375.282 554.011 375.282 554.011C374.077 557.23 372.651 560.353 371.043 563.348C338.405 621.663 256.778 648.094 194.252 657.574C166.77 661.7 138.932 663.453 111.143 663.036L112.905 694.938Z"
+                  fill="#FF9ECB"></path>
+              </mask>
+              <g mask="url(#mask0_377_1052)">
+                <path class="pink-path path"
+                  d="M104.953 683C208.786 671 416.052 620.6 378.452 511C364.215 469.5 271.953 532.001 331.452 554M382.453 549.5C432.787 539.167 532.952 502.5 551.452 439C535.952 397.5 481.952 429.5 480.452 367C493.452 305.5 662.953 276 690.452 251.5C713.952 223.5 748.452 190.5 673.952 -0.999512"
+                  stroke="#FFB8D9" stroke-width="40"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="hero-swirl cc-five w-embed">
+            <svg viewbox="0 0 254 276" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_368_958" style="mask-type: alpha" maskunits="userSpaceOnUse" x="30" y="8" width="180"
+                height="267">
+                <path
+                  d="M170.104 268.978L171.033 274.871C188.126 264.06 202.645 250.879 207.543 235.298C213.63 216.148 201.909 198.549 187.73 186.729C179.448 179.718 169.909 174.292 159.771 170.487C156.934 169.408 152.826 167.862 150.039 166.742C115.663 152.779 80.6181 133.718 57.162 104.343C33.1989 73.1984 39.174 45.715 73.7997 26.9659C81.2205 23.0057 89.142 20.1084 97.2492 17.8605C95.6109 16.3436 93.986 14.6152 93.2916 13.2072L84.753 8.08365C82.3884 8.87381 80.0459 9.72996 77.7286 10.6559C48.4695 22.3551 22.6631 47.8406 32.4811 81.7433C46.2003 126.843 106.649 156.667 147.732 172.643C154.047 175.107 160.868 177.252 166.927 180.316C182.699 188.273 201.116 203.318 203.304 221.829C205.118 240.396 189.481 256.375 170.104 268.978Z"
+                  fill="#FBC333"></path>
+              </mask>
+              <g mask="url(#mask0_368_958)">
+                <path class="yellow-path path"
+                  d="M170.953 272.5C196.286 258 233.153 219.7 177.953 182.5C108.453 150.999 7.45251 101.999 40.9525 46.4993C64.1522 26.0993 93.1188 10.3333 99.9521 7.5"
+                  stroke="#FBC333" stroke-width="40"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="hero-swirl cc-six w-embed">
+            <svg viewbox="0 0 307 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_377_1057" style="mask-type: alpha" maskunits="userSpaceOnUse" x="36" y="0" width="217"
+                height="225">
+                <path
+                  d="M107.441 212.685C83.9544 215.706 60.3352 217.632 36.6761 218.685L44.2914 224.957C58.6512 224.093 73.0125 222.956 87.3589 221.384C110.037 218.952 132.623 215.561 154.975 210.99C163.616 209.24 172.252 207.327 180.724 204.785C265.278 179.126 264.828 107.98 232.79 38.3261C227.227 26.2591 220.956 14.5107 213.874 3.2622C213.387 2.49858 212.921 1.76897 212.385 0.968628L205.402 5.79764C209.276 11.4256 212.896 17.2952 216.286 23.2384C229.763 47.1237 240.758 72.9444 244.845 100.167C251.596 146.259 232.323 179.335 188.655 195.609C177.386 199.964 165.586 202.608 153.754 205.007C138.471 208.16 122.905 210.671 107.441 212.685Z"
+                  fill="#FF6600"></path>
+              </mask>
+              <g mask="url(#mask0_377_1057)">
+                <path class="red-path path" d="M35.4521 224C142.952 221 322.452 195 210.452 -0.5" stroke="#FF6600"
+                  stroke-width="40"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="hero-swirl cc-seven cc-contact w-embed">
+            <svg viewbox="0 0 298 277" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_368_956" style="mask-type: alpha" maskunits="userSpaceOnUse" x="0" y="159" width="119"
+                height="25">
+                <path
+                  d="M0.406214 181.568C1.58926 182.14 3.26356 182.915 4.82963 183.488C5.7673 182.631 6.72651 181.809 7.71182 181.01C28.5529 164.113 57.9566 162.061 83.6172 164.606C92.0093 165.437 100.334 166.712 108.64 168.138L118.619 165.279C102.855 162.421 87.0729 159.714 71.0332 159.309C45.926 158.676 18.9055 163.644 0.406214 181.568Z"
+                  fill="#68DACB"></path>
+              </mask>
+              <g mask="url(#mask0_368_956)">
+                <path class="blue-path path" d="M2.95215 183.5C13.4521 167.5 56.9521 151.9 118.952 167.5"
+                  stroke="#68DACB" stroke-width="40"></path>
+              </g>
+              <mask id="mask1_368_956" style="mask-type: alpha" maskunits="userSpaceOnUse" x="124" y="131" width="97"
+                height="46">
+                <path
+                  d="M133.654 167.975L124.399 170.942C138.618 173.488 152.848 175.914 167.293 176.701C180.228 177.406 194.274 177.079 205.857 170.529C211.163 167.529 215.603 163.288 218.107 157.665C220.7 151.859 221.025 144.88 216.884 139.705C213.781 135.829 209.328 133.779 204.82 131.843C203.884 132.977 202.588 134.466 201.68 135.492C206.283 137.459 212.133 139.484 214.512 144.255C217.235 149.712 214.495 156.532 210.858 160.875C207.011 165.482 201.243 168.275 195.595 169.965C182.541 173.875 168.277 172.648 154.942 171.128C147.821 170.317 140.734 169.201 133.654 167.975Z"
+                  fill="#68DACB"></path>
+              </mask>
+              <g mask="url(#mask1_368_956)">
+                <path class="blue-path path"
+                  d="M126.452 168.5C153.952 174.667 211.452 181.5 217.452 153.5C220.452 139.5 209.452 137.5 200.452 131.124"
+                  stroke="#68DACB" stroke-width="40"></path>
+              </g>
+              <mask id="mask2_368_956" style="mask-type: alpha" maskunits="userSpaceOnUse" x="183" y="72" width="99"
+                height="61">
+                <path
+                  d="M190.067 101.91C192.99 96.1107 198.05 91.5395 203.384 87.9847C213.844 81.0216 226.571 78.3713 238.937 77.5383C252.218 76.6444 265.567 77.8361 278.777 79.1811C281.662 79.47 282.09 74.9949 279.209 74.7028C275.941 74.3735 272.669 74.0543 269.396 73.7743C244.228 71.6377 214.577 71.0732 194.563 89.1384C189.596 93.6263 185.424 99.2907 183.834 105.882C182.317 112.153 183.19 118.954 186.592 124.479C188.751 127.987 191.795 130.416 195.205 132.363C196.625 131.102 197.63 129.918 198.338 128.901C194.512 126.896 191.164 124.31 189.235 119.888C186.698 114.07 187.239 107.509 190.067 101.91Z"
+                  fill="#68DACB"></path>
+              </mask>
+              <g mask="url(#mask2_368_956)">
+                <path class="blue-path path"
+                  d="M280.453 77.0003C257.953 74 217.453 69.0004 189.453 98.0003C180.324 122.597 189.585 127.518 199.953 130.959"
+                  stroke="#68DACB" stroke-width="40"></path>
+              </g>
+            </svg>
+          </div>
+          <div class="hero-swirl cc-three w-embed">
+            <svg viewbox="0 0 426 271" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_377_1028" style="mask-type: alpha" maskunits="userSpaceOnUse" x="0" y="0" width="158"
+                height="128">
+                <path
+                  d="M0.932312 0.97897C0.932312 0.97897 4.48547 22.2318 4.9978 25.8098C61.6665 26.2725 111.997 86.42 141.546 127.232C145.959 118.274 154.66 120.307 157.866 121.423C88.3896 -2.83034 20.5821 -2.08666 0.932312 0.97897Z"
+                  fill="#FFB8D9"></path>
+              </mask>
+              <g mask="url(#mask0_377_1028)">
+                <path class="broken-path-four path" d="M-4.54785 14C16.2855 5.66665 91.9521 23.0001 152.952 127"
+                  stroke="#FFB8D9" stroke-width="50"></path>
+              </g>
+              <mask id="mask1_377_1028" style="mask-type: alpha" maskunits="userSpaceOnUse" x="141" y="120" width="201"
+                height="151">
+                <path
+                  d="M141.546 127.232C148.685 137.09 154.61 145.816 159.122 152.302C162.989 157.863 166.658 163.557 170.178 169.341C182.548 189.676 231.714 270.887 304.19 270.887C351.951 270.887 341.911 227.976 337.234 213.664H337.226C333.367 212.392 329.558 211.02 325.79 209.558C356.769 301.212 222.889 258.087 178.35 161.772C171.533 147.039 164.691 133.627 157.866 121.423C154.66 120.307 145.959 118.274 141.546 127.232Z"
+                  fill="#735BF6"></path>
+              </mask>
+              <g mask="url(#mask1_377_1028)">
+                <path class="broken-path-three path"
+                  d="M142.452 111C163.452 157.333 227.952 261.6 293.952 266C349.452 266 334.452 218.5 332.452 204.5"
+                  stroke="#735BF6" stroke-width="50"></path>
+              </g>
+              <mask id="mask2_377_1028" style="mask-type: alpha" maskunits="userSpaceOnUse" x="321" y="134" width="105"
+                height="46">
+                <path
+                  d="M321.642 159.731C324.369 167.936 332.549 166.035 336.45 164.581C338.912 161.458 342.399 159.053 347.241 157.822C379.468 149.617 412.396 172.142 422.395 179.794C424.394 179.529 425.452 179.331 425.452 179.331V151.914C381.666 126.422 334.177 129.38 321.642 159.731Z"
+                  fill="#FBC333"></path>
+              </mask>
+              <g mask="url(#mask2_377_1028)">
+                <path class="broken-path-one path" d="M324.452 169C329.619 152.667 372.452 125.5 436.452 169"
+                  stroke="#FBC333" stroke-width="50"></path>
+              </g>
+              <mask id="mask3_377_1028" style="mask-type: alpha" maskunits="userSpaceOnUse" x="319" y="159" width="18"
+                height="14">
+                <path
+                  d="M319.073 168.977C323.618 170.398 328.08 171.663 332.443 172.786C333.277 169.762 334.566 166.961 336.45 164.581C332.55 166.035 324.369 167.936 321.643 159.731C320.461 162.573 319.593 165.655 319.073 168.977Z"
+                  fill="#FEEFC8"></path>
+              </mask>
+              <g mask="url(#mask3_377_1028)">
+                <path class="broken-path-two path" d="M323.952 176L328.952 161.5" stroke="#FEEFC8" stroke-width="50">
+                </path>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+      <section class="c-contact">
+        <div data-contact-anim="" class="contact-form_wrapper w-form">
+          <form id="contact-form" name="wf-form-contact-form" data-name="contact-form" class="contact-form"
+            data-wf-page-id="6662e45aedcfe2c52fac7518" data-wf-element-id="c6b1aa79-9179-6f1d-ae31-34dca788fc45">
+            <div class="contact-form_inner">
+              <div class="c-form_field">
+                <div class="c-label_wrapper">
+                  <div class="c-label">Name</div>
+                </div>
+                <div class="c-input_wrapper">
+                  <input class="c-input w-input" maxlength="256" name="Name" data-name="Name"
+                    placeholder="Ciroma Adekunle" type="text" id="Name" required="" />
+                </div>
+              </div>
+              <div class="c-form_field">
+                <div class="c-label_wrapper">
+                  <div class="c-label">Work e-mail</div>
+                </div>
+                <div class="c-input_wrapper">
+                  <input class="c-input w-input" maxlength="256" name="Work-Email" data-name="Work Email"
+                    placeholder="you@youremail.com" type="email" id="Work-Email" required="" />
+                </div>
+              </div>
+              <div class="c-form_field">
+                <div class="c-label_wrapper">
+                  <div class="c-label">Phone</div>
+                </div>
+                <div class="c-input_wrapper">
+                  <input class="c-input w-input" maxlength="256" name="Phone" data-name="Phone"
+                    placeholder="555-456-852" type="tel" id="Phone" required="" />
+                </div>
+              </div>
+              <div class="c-form_field">
+                <div class="c-label_wrapper">
+                  <div class="c-label">Company</div>
+                </div>
+                <div class="c-input_wrapper">
+                  <input class="c-input w-input" maxlength="256" name="Company" data-name="Company"
+                    placeholder="Your company name" type="text" id="Company" required="" />
+                </div>
+              </div>
+              <div class="c-form_field">
+                <div class="c-label_wrapper">
+                  <div class="c-label">Company website</div>
+                </div>
+                <div class="c-input_wrapper">
+                  <input class="c-input w-input" maxlength="256" name="Company-Website" data-name="Company website"
+                    placeholder="yourcompanywebsite.xyz" type="text" id="Company-website" required="" />
+                </div>
+              </div>
+              <div class="c-form_field">
+                <div class="c-label_wrapper">
+                  <div class="c-label">Role</div>
+                </div>
+                <div class="c-input_wrapper">
+                  <input class="c-input w-input" maxlength="256" name="Role" data-name="Role" placeholder="Your role"
+                    type="text" id="Role" required="" />
+                </div>
+              </div>
+              <div class="c-form_field cc-textarea">
+                <div class="c-label_wrapper">
+                  <div class="c-label">How can Peppermint help?</div>
+                </div>
+                <div class="c-input_wrapper">
+                  <textarea id="Message" name="Message" maxlength="5000" data-name="Message" placeholder="Message"
+                    class="c-input cc-textarea w-input"></textarea>
+                </div>
+              </div>
+              <div class="form-success w-form-done">
+                <div>
+                  Thanks for your interest in Peppermint!<br />
+                  We'll be in touch soon.
+                </div>
+              </div>
+              <div class="form-tag">Currently in Beta</div>
+            </div>
+            <div class="form-btn_wrapper">
+              <input type="submit" data-wait="Please wait..." id="submit" class="form-btn w-button" value="Submit" />
+              <div>
+                <div class="form-btn cc-two">
+                  <div>Submit</div>
+                  <div class="c-spinner">
+                    <div class="spinner-inner">
+                      <div class="spinner-bar"></div>
+                      <div class="spinner-bar"></div>
+                      <div class="spinner-bar"></div>
+                      <div class="spinner-bar"></div>
+                      <div class="spinner-bar"></div>
+                      <div class="spinner-bar"></div>
+                      <div class="spinner-bar"></div>
+                      <div class="spinner-bar"></div>
+                      <div class="spinner-bar"></div>
+                      <div class="spinner-bar"></div>
+                      <div class="spinner-bar"></div>
+                      <div class="spinner-bar"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="form-success">
+            <div>
+              Thanks for your interest in Peppermint!<br />
+              We'll be in touch soon.
+            </div>
+          </div>
+          <div class="form-error w-form-fail">
+            <div>Oops! Something went wrong while submitting the form.</div>
+          </div>
+        </div>
+      </section>
+      <footer class="c-footer">
+        <div class="footer-inner">
+          <div class="w-embed w-script">
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            Peppermint Inc. All rights reserved.
+          </div>
+          <div class="footer-links">
+            <a href="terms-and-conditions.html" class="footer-link">Terms &amp; Conditions</a>
+            <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+            <a href="https://wearecheck.co/" target="_blank" class="check-link w-inline-block"></a>
+          </div>
+        </div>
+        <div class="footer-text_container">
+          <div class="footer-text cc-one">peppermint</div>
+          <div class="footer-text cc-two">peppermint</div>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script src="js/jquery.min.js"
+    type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <script src="js/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/DrawSVGPlugin.min.js"></script>
+  <script src="js/swiper-bundle.min.js"
+    integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/SplitText.min.js"></script>
+
+  <script src="js/lenis.min.js"></script>
+  <script>
+    gsap.registerPlugin(
+      ScrollTrigger,
+      DrawSVGPlugin,
+      SplitText
+    );
+    //Smooth Scroll
+    const lenis = new Lenis();
+    function raf (time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    window.onload = () => {
+      if (history.scrollRestoration) {
+        history.scrollRestoration = "manual";
+      } else {
+        window.onbeforeunload = function () {
+          window.scrollTo(0, 0);
+        };
+      }
+    };
+    lenis.on("scroll", ScrollTrigger.update);
+    function checkDevice () {
+      if (window.innerWidth <= 767) {
+        isMobile = true;
+        isWideScreen = false;
+      } else if (window.innerWidth >= 1900) {
+        isWideScreen = true;
+        isMobile = false;
+      } else {
+        isMobile = false;
+        isWideScreen = false;
+      }
+    }
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
+    console.log("👋 – 🔨 with ❤️ by Check");
+  </script>
+  <script src="js/lottie.min.js"></script>
+  <script>
+    //hero animation
+    gsap.set("[data-hero-anim]", { visibility: "visible", opacity: 1 });
+    gsap.set("[data-subtext-anim]", { visibility: "visible", opacity: 1 });
+    gsap.set("[data-hero-fade]", { visibility: "visible", opacity: 1 });
+    heroResults = new SplitText("[data-hero-anim]", {
+      type: "lines",
+      linesClass: "hero-line",
+    });
+    subtextResults = new SplitText("[data-subtext-anim]", {
+      type: "lines",
+      linesClass: "subtext-line",
+    });
+    headerLines = heroResults.lines;
+    subtextLines = subtextResults.lines;
+    const headerResultsParent = new SplitText("[data-hero-anim]", {
+      linesClass: "header-parent",
+    });
+    const subtextResultsParent = new SplitText("[data-subtext-anim]", {
+      linesClass: "header-parent",
+    });
+    window.addEventListener("resize", () => {
+      heroResults.revert();
+    });
+    //Hero Reveal Animation
+    const heroTl = gsap.timeline({});
+    heroTl
+      .fromTo(
+        ".broken-path-one",
+        0.5,
+        { drawSVG: "100% 100%" },
+        { drawSVG: "0% 100%", ease: "power2.out" },
+        "<+0.8"
+      )
+      .fromTo(
+        ".broken-path-two",
+        0.3,
+        { drawSVG: "100% 100%" },
+        { drawSVG: "0% 100%", ease: "power2.out" },
+        "<"
+      )
+      .fromTo(
+        ".broken-path-three",
+        0.6,
+        { drawSVG: "100% 100%" },
+        { drawSVG: "0% 100%", ease: "power2.out" },
+        "<"
+      )
+      .fromTo(
+        ".broken-path-four",
+        0.6,
+        { drawSVG: "100% 100%" },
+        { drawSVG: "0% 100%", ease: "power2.out" },
+        "<"
+      )
+      .fromTo(
+        ".broken-path-five",
+        0.5,
+        { drawSVG: "100% 100%" },
+        { drawSVG: "0% 100%", ease: "power2.out" },
+        "<"
+      )
+      .from(
+        ".pink-path",
+        {
+          duration: 1,
+          ease: "power2.out",
+          drawSVG: 0,
+        },
+        "<"
+      )
+      .from(
+        ".purple-path",
+        {
+          duration: 0.6,
+          ease: "power2.out",
+          drawSVG: 0,
+          delay: 0.1,
+        },
+        "<"
+      )
+      .from(
+        ".yellow-path",
+        {
+          duration: 0.5,
+          ease: "power2.out",
+          drawSVG: 0,
+          delay: 0.1,
+        },
+        "<"
+      )
+      .from(
+        ".red-path",
+        {
+          duration: 0.4,
+          ease: "power2.out",
+          drawSVG: 0,
+          delay: 0.15,
+        },
+        "<"
+      )
+      .from(
+        ".blue-path",
+        {
+          duration: 0.5,
+          ease: "power2.out",
+          stagger: 0.1,
+          drawSVG: 0,
+          delay: 0.2,
+        },
+        "<"
+      );
+
+    //form submission
+    const form = document.querySelector("#contact-form");
+    const submitButton = document.querySelector("#submit");
+    const spinnerButton = document.querySelector(".form-btn.cc-two");
+    const successMessage = document.querySelector(".form-success");
+    const errorMessage = document.querySelector(".form-error");
+    const formInputs = document.querySelectorAll(".c-form_field");
+
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbwbX3CFESp6TSwtX6VK7pXWl1lgbacAn0A5qUWi0KZdjpNn6aF4OgDhkY4H3fhsnCI4rA/exec";
+
+    form.addEventListener("submit", (e) => {
+      submitButton.disabled = true;
+      submitButton.style.display = "none";
+      spinnerButton.style.display = "flex";
+      e.preventDefault();
+      let requestBody = new FormData(form);
+      fetch(scriptURL, { method: "POST", body: requestBody })
+        .then((response) => {
+          submitButton.style.display = "none";
+          spinnerButton.style.display = "none";
+          successMessage.style.display = "block";
+          errorMessage.style.display = "none";
+          formInputs.forEach((input) => (input.style.display = "none"));
+        })
+        .catch((error) => {
+          spinnerButton.style.display = "none";
+          errorMessage.style.display = "block";
+          successMessage.style.display = "none";
+        });
+    });
+  </script>
+
+</body>
+
+</html>

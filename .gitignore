@@ -1,11 +1,16 @@
-# OS & IDE
+# Sensitive reverse-engineering analysis data
+rea/
+
+# Backup / original files
+*.original.html
+*.original.css
+
+# OS / editor
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 
-# Environment & Sensitive
-.env
-.env.*
-*.pem
-*.key
+# Node
+node_modules/
+npm-debug.log*
