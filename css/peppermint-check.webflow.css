@@ -4480,14 +4480,88 @@ display: none;
 }
 
 /* PREVENT FAQ OVERLAP & FORCE AFITA CANVASS BACKGROUND */
+.card-bg_shape {
+  color: #FFF7FA !important;
+  fill: #FFF7FA !important;
+}
+
+.c-services .card-bg_shape {
+  color: #FFF7FA !important;
+  fill: #FFF7FA !important;
+}
+
+.c-services .card-bg_shape svg path {
+  fill: #FFF7FA !important;
+}
+
 .c-faq {
   margin-top: 0 !important;
   background-color: #FFF7FA !important;
+  padding-top: 80px !important;
+  padding-bottom: 90px !important;
+}
+
+.faq-inner {
+  padding-bottom: 36px !important;
+}
+
+.faq-cta-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  text-align: center !important;
+  z-index: 2 !important;
+  margin-top: 10px !important;
+}
+
+.c-button.cc-lg.cc-faq-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  background: linear-gradient(135deg, #FD5990 0%, #E82C6D 100%) !important;
+  color: #FFFFFF !important;
+  border-radius: 999px !important;
+  padding: 18px 46px !important;
+  font-family: Excon, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  box-shadow: 0 10px 24px rgba(253, 89, 144, 0.35) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.c-button.cc-lg.cc-faq-cta:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 14px 32px rgba(253, 89, 144, 0.5) !important;
+  background: linear-gradient(135deg, #FF6EA0 0%, #FD5990 100%) !important;
+}
+
+.c-button.cc-lg.cc-faq-cta:active {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+.c-button.cc-lg.cc-faq-cta svg {
+  fill: #FFFFFF !important;
+  color: #FFFFFF !important;
+  flex-shrink: 0 !important;
+}
+
+.faq-cta-subtext {
+  margin-top: 14px !important;
+  font-size: 14px !important;
+  color: #7A6572 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
 }
 
 @media screen and (max-width: 767px) {
   .c-faq {
-    padding-top: 60px !important;
+    padding-top: 50px !important;
     padding-bottom: 60px !important;
   }
   .faq-inner {
@@ -4502,5 +4576,15 @@ display: none;
   .accordion-inner {
     padding: 14px 18px !important;
     font-size: 17px !important;
+  }
+  .c-button.cc-lg.cc-faq-cta {
+    width: auto !important;
+    max-width: calc(100% - 32px) !important;
+    padding: 14px 30px !important;
+    font-size: 17px !important;
+  }
+  .faq-cta-subtext {
+    font-size: 13px !important;
+    padding: 0 16px !important;
   }
 }
